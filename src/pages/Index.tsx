@@ -10,11 +10,11 @@ const Index = () => {
       <Header />
       
       <div className="p-4">
-        <div className="flex items-center gap-4 mb-4">
-          <div className="w-16 h-16 bg-gray-200 rounded-full"></div>
-          <div>
-            <h1 className="text-2xl font-semibold font-headers">Good morning, Brian</h1>
-            <p className="text-sm text-gray-500">Last logged in 2 weeks ago</p>
+        <div className="flex items-center gap-6 mb-6">
+          <div className="w-16 h-16 bg-gray-200 rounded-full flex-shrink-0"></div>
+          <div className="flex-1">
+            <h1 className="text-2xl font-semibold font-headers mb-1">Good morning, Brian</h1>
+            <p className="text-sm text-gray-500">Welcome back to your insurance dashboard. Last logged in 2 weeks ago.</p>
           </div>
         </div>
       </div>
@@ -22,20 +22,20 @@ const Index = () => {
       <QuickActions />
 
       <div className="p-4 bg-gray-100">
-        <div className="flex justify-between items-center mb-2">
+        <div className="flex justify-between items-center mb-4">
           <h2 className="text-lg font-semibold font-headers">Most recent cover</h2>
-          <button className="text-secondary text-sm">See all</button>
+          <button className="text-secondary text-sm font-medium">See all</button>
         </div>
-        <div className="flex items-center gap-4 bg-white p-4 rounded-lg">
-          <div className="bg-[#4CAF50] p-3 rounded-full">
+        <div className="flex items-center gap-6 bg-white p-6 rounded-lg">
+          <div className="bg-[#4CAF50] p-3 rounded-full flex-shrink-0">
             <Flag className="w-6 h-6 text-white" />
           </div>
           <div className="flex-1">
-            <h3 className="font-semibold font-headers">Golfer's</h3>
-            <p className="text-sm text-gray-500">GOL/072244355/25</p>
+            <h3 className="font-semibold font-headers mb-1">Golfer's Insurance</h3>
+            <p className="text-sm text-gray-500">Policy number: GOL/072244355/25</p>
           </div>
-          <div className="text-right">
-            <p className="text-sm font-semibold">-Ksh. 1,250</p>
+          <div className="text-right flex-shrink-0">
+            <p className="text-sm font-semibold mb-1">-Ksh. 1,250</p>
             <p className="text-xs text-gray-500">27 Nov, 02:45 PM</p>
           </div>
         </div>
