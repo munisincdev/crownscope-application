@@ -1,10 +1,10 @@
 import { FileCheck, Shield, FileText, RefreshCw } from "lucide-react";
 
 const actions = [
-  { icon: FileCheck, label: "Make a claim", color: "bg-[#7E69AB]" },
-  { icon: Shield, label: "Buy cover", color: "bg-[#7FB69C]" },
-  { icon: FileText, label: "My documents", color: "bg-[#7AA1D2]" },
-  { icon: RefreshCw, label: "Renewal centre", color: "bg-[#8B7373]" },
+  { icon: FileCheck, label: "Make a\nclaim", color: "bg-[#7E69AB]" },
+  { icon: Shield, label: "Buy\ncover", color: "bg-[#7FB69C]" },
+  { icon: FileText, label: "My\ndocuments", color: "bg-[#7AA1D2]" },
+  { icon: RefreshCw, label: "Renewal\ncentre", color: "bg-[#8B7373]" },
 ];
 
 export const QuickActions = () => {
@@ -18,7 +18,7 @@ export const QuickActions = () => {
           <div className={`${action.color} p-4 rounded-full`}>
             <action.icon className="w-6 h-6 text-white" />
           </div>
-          <span className="text-xs text-center">{action.label}</span>
+          <span className="text-xs text-center whitespace-pre-line">{action.label}</span>
         </button>
       ))}
     </div>
