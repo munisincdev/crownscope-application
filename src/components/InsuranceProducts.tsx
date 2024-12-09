@@ -2,7 +2,7 @@ import { Flag, Heart, Home, Shield, UserRound, MessageCircle } from "lucide-reac
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import { Button } from "./ui/button";
-import { Avatar, AvatarFallback } from "./ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const products = [
   { icon: Flag, label: "Travel Insurance", color: "bg-[#8B7373]" },
@@ -68,7 +68,8 @@ export const InsuranceProducts = () => {
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
             <div className="flex items-center gap-3 mb-2">
-              <Avatar className="h-10 w-10 bg-secondary">
+              <Avatar className="h-10 w-10">
+                <AvatarImage src="/lovable-uploads/9200986a-e7ad-4490-a49f-74100d47da51.png" alt="Prince" />
                 <AvatarFallback>
                   <UserRound className="h-6 w-6" />
                 </AvatarFallback>
@@ -88,7 +89,8 @@ export const InsuranceProducts = () => {
                   className={`flex items-start gap-2 ${message.role === 'assistant' ? 'justify-start' : 'justify-end'}`}
                 >
                   {message.role === 'assistant' && (
-                    <Avatar className="h-8 w-8 bg-secondary">
+                    <Avatar className="h-8 w-8">
+                      <AvatarImage src="/lovable-uploads/9200986a-e7ad-4490-a49f-74100d47da51.png" alt="Prince" />
                       <AvatarFallback>
                         <UserRound className="h-5 w-5" />
                       </AvatarFallback>
@@ -107,7 +109,8 @@ export const InsuranceProducts = () => {
               ))}
               {isTyping && (
                 <div className="flex items-start gap-2">
-                  <Avatar className="h-8 w-8 bg-secondary">
+                  <Avatar className="h-8 w-8">
+                    <AvatarImage src="/lovable-uploads/9200986a-e7ad-4490-a49f-74100d47da51.png" alt="Prince" />
                     <AvatarFallback>
                       <UserRound className="h-5 w-5" />
                     </AvatarFallback>
