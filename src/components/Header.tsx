@@ -45,8 +45,8 @@ export const Header = () => {
   return (
     <header className="flex justify-between items-center p-4 bg-white">
       <img 
-        src="/lovable-uploads/9200986a-e7ad-4490-a49f-74100d47da51.png" 
-        alt="Crownscope Logo" 
+        src="/lovable-uploads/1cd6fa64-14b1-446e-999d-5031ea3a85d8.png" 
+        alt="Crownscope Insurance Brokers Logo" 
         className="h-12"
         key={Date.now()}
       />
