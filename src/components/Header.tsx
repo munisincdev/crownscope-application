@@ -43,14 +43,15 @@ export const Header = () => {
   ];
 
   return (
-    <header className="flex justify-between items-center p-4 bg-white">
+    <header className="flex justify-between items-center bg-white">
       <img 
         src="/lovable-uploads/1cd6fa64-14b1-446e-999d-5031ea3a85d8.png" 
         alt="Crownscope Insurance Brokers Logo" 
-        className="h-24 drop-shadow-md transition-transform hover:scale-105"
+        className="h-24 drop-shadow-md transition-transform hover:scale-105 object-contain pl-2"
         key={Date.now()}
+        loading="eager"
       />
-      <div className="flex gap-4">
+      <div className="flex gap-4 p-4">
         <DropdownMenu>
           <DropdownMenuTrigger className="relative">
             <div className="bg-primary hover:bg-primary-light transition-colors duration-200 p-2 rounded-full">
