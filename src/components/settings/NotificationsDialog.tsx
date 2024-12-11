@@ -59,9 +59,9 @@ export const NotificationsDialog = ({ open, onOpenChange }: NotificationsDialogP
           </div>
         </DialogHeader>
 
-        <div className="p-6 space-y-8">
+        <div className="p-6 space-y-6">
           <div className="space-y-2">
-            <h3 className="text-base font-semibold text-gray-800 flex items-center gap-2">
+            <h3 className="text-base font-headers text-gray-800 flex items-center gap-2">
               <Bell className="w-4 h-4 text-primary" />
               Manage notifications
             </h3>
@@ -72,7 +72,7 @@ export const NotificationsDialog = ({ open, onOpenChange }: NotificationsDialogP
 
           <div className="space-y-6">
             <div className="flex items-center justify-between space-x-4">
-              <div className="space-y-1">
+              <div className="space-y-1.5">
                 <Label className="text-sm font-medium flex items-center gap-2">
                   <FileCheck className="w-4 h-4 text-primary" />
                   Claims update
@@ -88,7 +88,7 @@ export const NotificationsDialog = ({ open, onOpenChange }: NotificationsDialogP
             </div>
 
             <div className="flex items-center justify-between space-x-4">
-              <div className="space-y-1">
+              <div className="space-y-1.5">
                 <Label className="text-sm font-medium flex items-center gap-2">
                   <RefreshCw className="w-4 h-4 text-primary" />
                   Auto-renew
@@ -104,7 +104,7 @@ export const NotificationsDialog = ({ open, onOpenChange }: NotificationsDialogP
             </div>
 
             <div className="flex items-center justify-between space-x-4">
-              <div className="space-y-1">
+              <div className="space-y-1.5">
                 <Label className="text-sm font-medium flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-primary" />
                   New cover
@@ -120,7 +120,7 @@ export const NotificationsDialog = ({ open, onOpenChange }: NotificationsDialogP
             </div>
 
             <div className="flex items-center justify-between space-x-4">
-              <div className="space-y-1">
+              <div className="space-y-1.5">
                 <Label className="text-sm font-medium flex items-center gap-2">
                   <FileEdit className="w-4 h-4 text-primary" />
                   Policy change

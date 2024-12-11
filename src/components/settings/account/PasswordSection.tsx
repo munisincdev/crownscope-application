@@ -25,14 +25,14 @@ export const PasswordSection = ({
   return (
     <div className="space-y-6">
       <div className="space-y-2">
-        <h3 className="text-base font-semibold text-gray-800 flex items-center gap-2">
+        <h3 className="text-base font-headers text-gray-800 flex items-center gap-2">
           <Lock className="w-4 h-4 text-primary" />
           Change password
         </h3>
       </div>
 
       <div className="space-y-4">
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           <Label htmlFor="current-password" className="text-sm text-gray-600">Current password</Label>
           <Input
             id="current-password"
@@ -43,7 +43,7 @@ export const PasswordSection = ({
           />
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           <Label htmlFor="new-password" className="text-sm text-gray-600">New password</Label>
           <Input
             id="new-password"
@@ -54,7 +54,7 @@ export const PasswordSection = ({
           />
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           <Label htmlFor="confirm-password" className="text-sm text-gray-600">Confirm new password</Label>
           <Input
             id="confirm-password"

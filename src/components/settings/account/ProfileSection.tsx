@@ -51,13 +51,13 @@ export const ProfileSection = ({
             />
           </label>
         </div>
-        <span className="text-secondary hover:text-secondary-light text-sm cursor-pointer">
+        <span className="text-sm text-secondary hover:text-secondary-light cursor-pointer">
           Change picture
         </span>
       </div>
 
       <div className="space-y-4">
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           <Label htmlFor="name" className="text-sm text-gray-600 flex items-center gap-2">
             <User className="w-4 h-4 text-primary" />
             Full name
@@ -70,7 +70,7 @@ export const ProfileSection = ({
           />
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           <Label htmlFor="email" className="text-sm text-gray-600 flex items-center gap-2">
             <Mail className="w-4 h-4 text-primary" />
             Email address
@@ -84,7 +84,7 @@ export const ProfileSection = ({
           />
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-1.5">
           <Label htmlFor="phone" className="text-sm text-gray-600 flex items-center gap-2">
             <Phone className="w-4 h-4 text-primary" />
             Phone number
