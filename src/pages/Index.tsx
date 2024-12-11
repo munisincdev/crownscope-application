@@ -20,7 +20,7 @@ const Index = () => {
       
       <main className="space-y-4 px-4 pt-6">
         <div>
-          <h1 className="text-sm font-semibold font-headers tracking-wide mb-1 flex items-center text-gray-900">
+          <h1 className="text-xl font-semibold font-headers tracking-wide mb-2 flex items-center text-gray-900">
             Good morning, Brian
             {getTimeIcon()}
           </h1>
