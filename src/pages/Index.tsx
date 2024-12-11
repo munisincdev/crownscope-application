@@ -2,7 +2,7 @@ import { Header } from "@/components/Header";
 import { QuickActions } from "@/components/QuickActions";
 import { InsuranceProducts } from "@/components/InsuranceProducts";
 import { BottomNav } from "@/components/BottomNav";
-import { Flag, Sun, Moon, Sunrise, Sunset } from "lucide-react";
+import { Flag, Sun, Moon, Sunrise, Sunset, GolfHole } from "lucide-react";
 
 const Index = () => {
   const getTimeIcon = () => {
@@ -32,25 +32,27 @@ const Index = () => {
 
         <QuickActions />
 
-        <div className="bg-white shadow-sm rounded-lg">
+        <div className="bg-gray-50 rounded-lg">
           <div className="p-4">
-            <div className="flex justify-between items-center mb-3">
-              <h2 className="text-base font-semibold text-gray-900">Most recent cover</h2>
-              <button className="text-secondary text-xs font-medium hover:text-secondary-light transition-colors">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-base font-semibold text-gray-700">Most recent cover</h2>
+              <button className="text-secondary hover:text-secondary-light transition-colors text-sm">
                 See all
               </button>
             </div>
-            <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-xl">
-              <div className="bg-success p-2 rounded-full flex-shrink-0">
-                <Flag className="w-4 h-4 text-white" />
+            <div className="flex items-center gap-4">
+              <div className="bg-product-golfer w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                <GolfHole className="w-6 h-6 text-white" />
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="font-semibold font-headers text-sm mb-0.5 text-gray-900">Golfer's Insurance</h3>
-                <p className="text-xs text-gray-500 truncate">Policy number: GOL/072244355/25</p>
+                <div className="flex flex-col">
+                  <h3 className="font-semibold text-base mb-0.5">Golfer's</h3>
+                  <p className="text-sm text-gray-500">GOL/072244355/25</p>
+                </div>
               </div>
-              <div className="text-right flex-shrink-0">
-                <p className="text-sm font-semibold mb-0.5 text-gray-900">-Ksh. 1,250</p>
-                <p className="text-xs text-gray-500">27 Nov, 02:45 PM</p>
+              <div className="text-right">
+                <p className="font-semibold text-base mb-0.5">-Ksh. 1,250</p>
+                <p className="text-sm text-gray-500">27 Nov, 02:45 PM</p>
               </div>
             </div>
           </div>
