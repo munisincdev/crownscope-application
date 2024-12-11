@@ -2,16 +2,28 @@ import { Header } from "@/components/Header";
 import { QuickActions } from "@/components/QuickActions";
 import { InsuranceProducts } from "@/components/InsuranceProducts";
 import { BottomNav } from "@/components/BottomNav";
-import { Flag } from "lucide-react";
+import { Flag, Sun, Moon, Sunrise, Sunset } from "lucide-react";
 
 const Index = () => {
+  const getTimeIcon = () => {
+    const hour = new Date().getHours();
+    
+    if (hour >= 5 && hour < 12) return <Sunrise className="w-5 h-5 inline-block ml-2" fill="#ab1f74" fillOpacity={0.1} stroke="#ab1f74" />;
+    if (hour >= 12 && hour < 17) return <Sun className="w-5 h-5 inline-block ml-2" fill="#ab1f74" fillOpacity={0.1} stroke="#ab1f74" />;
+    if (hour >= 17 && hour < 20) return <Sunset className="w-5 h-5 inline-block ml-2" fill="#ab1f74" fillOpacity={0.1} stroke="#ab1f74" />;
+    return <Moon className="w-5 h-5 inline-block ml-2" fill="#ab1f74" fillOpacity={0.1} stroke="#ab1f74" />;
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 pb-16 font-sans">
       <Header />
       
       <div className="p-3">
         <div className="mb-4">
-          <h1 className="text-xl font-semibold font-headers mb-1">Good morning, Brian</h1>
+          <h1 className="text-xl font-semibold font-headers mb-1 flex items-center">
+            Good morning, Brian
+            {getTimeIcon()}
+          </h1>
           <p className="text-sm text-gray-500">Welcome back to your insurance dashboard. Last logged in 2 weeks ago.</p>
         </div>
       </div>
