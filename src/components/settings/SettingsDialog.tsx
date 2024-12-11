@@ -4,6 +4,7 @@ import { CreditCard, Bell, HelpCircle, User, ChevronRight, ArrowLeft } from "luc
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { AccountSettingsDialog } from "./AccountSettingsDialog";
+import { NotificationsDialog } from "./NotificationsDialog";
 
 interface SettingsDialogProps {
   open: boolean;
@@ -14,6 +15,7 @@ export const SettingsDialog = ({ open, onOpenChange }: SettingsDialogProps) => {
   const userEmail = "brian.k@gmail.com";
   const navigate = useNavigate();
   const [showAccountSettings, setShowAccountSettings] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
 
   const handleViewProfile = () => {
     onOpenChange(false);
@@ -89,6 +91,7 @@ export const SettingsDialog = ({ open, onOpenChange }: SettingsDialogProps) => {
               <Button 
                 variant="ghost" 
                 className="w-full justify-between text-gray-700 hover:text-primary hover:bg-gray-50 h-14"
+                onClick={() => setShowNotifications(true)}
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
@@ -132,6 +135,11 @@ export const SettingsDialog = ({ open, onOpenChange }: SettingsDialogProps) => {
       <AccountSettingsDialog
         open={showAccountSettings}
         onOpenChange={setShowAccountSettings}
+      />
+
+      <NotificationsDialog
+        open={showNotifications}
+        onOpenChange={setShowNotifications}
       />
     </>
   );
