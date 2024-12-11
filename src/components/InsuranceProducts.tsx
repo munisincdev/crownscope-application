@@ -47,17 +47,17 @@ export const InsuranceProducts = () => {
   };
 
   return (
-    <div className="p-4">
-      <h2 className="text-lg font-semibold mb-4">Buy now</h2>
-      <div className="grid grid-cols-3 gap-4">
+    <div className="p-2">
+      <h2 className="text-lg font-semibold mb-3">Buy now</h2>
+      <div className="grid grid-cols-3 gap-3">
         {products.map((product) => (
           <button
             key={product.label}
             className="flex flex-col items-center gap-2 group"
             onClick={() => handleProductClick(product.label)}
           >
-            <div className={`${product.color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
-              <product.icon className="w-6 h-6 text-white" />
+            <div className={`${product.color} p-3 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
+              <product.icon className="w-5 h-5 text-white" />
             </div>
             <span className="text-xs text-center group-hover:text-primary">{product.label}</span>
           </button>
