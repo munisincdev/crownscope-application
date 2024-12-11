@@ -8,7 +8,6 @@ import {
 } from "./ui/dropdown-menu";
 
 export const Header = () => {
-  // Mock data for recent emails - in a real app, this would come from an API
   const recentEmails = [
     {
       id: 1,
@@ -49,7 +48,6 @@ export const Header = () => {
         alt="Crownscope Insurance Brokers Logo" 
         className="h-32 w-auto drop-shadow-md transition-transform hover:scale-105 object-contain"
         style={{ 
-          imageRendering: '-webkit-optimize-contrast',
           imageRendering: 'crisp-edges'
         }}
         draggable="false"
