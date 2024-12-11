@@ -35,7 +35,7 @@ const Index = () => {
         <div className="bg-white shadow-sm rounded-lg">
           <div className="p-4">
             <div className="flex justify-between items-center mb-3">
-              <h2 className="text-base font-semibold font-headers text-gray-900">Most recent cover</h2>
+              <h2 className="text-base font-semibold text-gray-900">Most recent cover</h2>
               <button className="text-secondary text-xs font-medium hover:text-secondary-light transition-colors">
                 See all
               </button>

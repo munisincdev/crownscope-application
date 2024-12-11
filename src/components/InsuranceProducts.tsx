@@ -48,7 +48,7 @@ export const InsuranceProducts = () => {
 
   return (
     <div className="bg-white rounded-lg shadow-sm p-4">
-      <h2 className="text-base font-semibold mb-3">Buy now</h2>
+      <h2 className="text-base font-semibold text-gray-900 mb-3">Buy now</h2>
       <div className="grid grid-cols-3 gap-3">
         {products.map((product) => (
           <button
