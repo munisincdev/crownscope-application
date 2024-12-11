@@ -46,12 +46,12 @@ const Index = () => {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-col">
-                  <h3 className="font-semibold text-sm tracking-wide mb-0.5">Golfer's</h3>
+                  <h3 className="text-xs font-semibold tracking-wide mb-0.5">Golfer's</h3>
                   <p className="text-xs tracking-wide text-gray-500">GOL/072244355/25</p>
                 </div>
               </div>
               <div className="text-right">
-                <p className="font-semibold text-sm tracking-wide mb-0.5">-Ksh. 1,250</p>
+                <p className="text-xs font-semibold tracking-wide mb-0.5">-Ksh. 1,250</p>
                 <p className="text-xs tracking-wide text-gray-500">27 Nov, 02:45 PM</p>
               </div>
             </div>
