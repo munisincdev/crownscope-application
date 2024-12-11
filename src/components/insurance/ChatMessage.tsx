@@ -18,10 +18,10 @@ export const ChatMessage = ({ role, content }: ChatMessageProps) => {
         </Avatar>
       )}
       <div
-        className={`max-w-[80%] p-3 rounded-2xl ${
+        className={`max-w-[80%] p-3 rounded-2xl text-sm ${
           role === 'assistant'
-            ? 'bg-white shadow-sm border'
-            : 'bg-secondary text-white'
+            ? 'bg-white shadow-sm border text-foreground'
+            : 'bg-primary text-primary-foreground'
         } ${role === 'assistant' ? 'rounded-tl-none' : 'rounded-tr-none'}`}
       >
         {content}

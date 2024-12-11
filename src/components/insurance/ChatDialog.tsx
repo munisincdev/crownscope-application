@@ -14,7 +14,9 @@ interface ChatDialogProps {
 }
 
 export const ChatDialog = ({ isOpen, onOpenChange, selectedProduct }: ChatDialogProps) => {
-  const [messages, setMessages] = useState<Array<{ role: 'user' | 'assistant', content: string }>>([]);
+  const [messages, setMessages] = useState<Array<{ role: 'user' | 'assistant', content: string }>>([
+    { role: 'assistant', content: `${INITIAL_MESSAGE} ${selectedProduct}?` }
+  ]);
   const [isTyping, setIsTyping] = useState(false);
 
   const handleSendMessage = async (message: string) => {
@@ -44,8 +46,8 @@ export const ChatDialog = ({ isOpen, onOpenChange, selectedProduct }: ChatDialog
               </AvatarFallback>
             </Avatar>
             <div className="text-left">
-              <DialogTitle className="mb-1">Chat with Prince</DialogTitle>
-              <p className="text-sm text-muted-foreground">Your Insurance Advisor</p>
+              <DialogTitle className="text-base font-semibold tracking-wide mb-1">Chat with Prince</DialogTitle>
+              <p className="text-xs tracking-wide text-muted-foreground">Your Insurance Advisor</p>
             </div>
           </div>
         </DialogHeader>
@@ -64,7 +66,7 @@ export const ChatDialog = ({ isOpen, onOpenChange, selectedProduct }: ChatDialog
                   </AvatarFallback>
                 </Avatar>
                 <div className="bg-white shadow-sm border p-3 rounded-2xl rounded-tl-none">
-                  Typing...
+                  <span className="text-sm">Typing...</span>
                 </div>
               </div>
             )}
@@ -83,7 +85,7 @@ export const ChatDialog = ({ isOpen, onOpenChange, selectedProduct }: ChatDialog
               type="text"
               name="message"
               placeholder="Type your message..."
-              className="flex-1 p-2 border rounded-full"
+              className="flex-1 px-4 py-2 text-sm border rounded-full bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
             />
             <Button type="submit" size="icon" className="rounded-full">
               <MessageCircle className="h-4 w-4" />
