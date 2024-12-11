@@ -18,7 +18,7 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pb-16">
       <Header />
       
-      <main className="space-y-4 px-4">
+      <main className="space-y-4 px-4 pt-6">
         <div>
           <h1 className="text-xl font-bold font-headers mb-1 flex items-center text-gray-900">
             Good morning, Brian
