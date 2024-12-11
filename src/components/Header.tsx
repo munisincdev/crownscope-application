@@ -43,16 +43,19 @@ export const Header = () => {
   ];
 
   return (
-    <header className="flex justify-between items-center bg-white">
+    <header className="flex justify-between items-center bg-white px-6">
       <img 
         src="/lovable-uploads/1cd6fa64-14b1-446e-999d-5031ea3a85d8.png" 
         alt="Crownscope Insurance Brokers Logo" 
-        className="h-32 w-auto drop-shadow-md transition-transform hover:scale-105 object-contain pl-2"
-        style={{ imageRendering: 'crisp-edges' }}
+        className="h-32 w-auto drop-shadow-md transition-transform hover:scale-105 object-contain"
+        style={{ 
+          imageRendering: '-webkit-optimize-contrast',
+          imageRendering: 'crisp-edges'
+        }}
         draggable="false"
         loading="eager"
       />
-      <div className="flex gap-4 p-4">
+      <div className="flex gap-6 p-4">
         <DropdownMenu>
           <DropdownMenuTrigger className="relative">
             <div className="bg-primary hover:bg-primary-light transition-colors duration-200 p-2 rounded-full">
