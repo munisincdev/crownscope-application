@@ -2,7 +2,7 @@ import { Header } from "@/components/Header";
 import { QuickActions } from "@/components/QuickActions";
 import { InsuranceProducts } from "@/components/InsuranceProducts";
 import { BottomNav } from "@/components/BottomNav";
-import { Flag, Sun, Moon, Sunrise, Sunset, GolfHole } from "lucide-react";
+import { Flag, Sun, Moon, Sunrise, Sunset, Golf } from "lucide-react";
 
 const Index = () => {
   const getTimeIcon = () => {
@@ -42,7 +42,7 @@ const Index = () => {
             </div>
             <div className="flex items-center gap-4">
               <div className="bg-product-golfer w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
-                <GolfHole className="w-6 h-6 text-white" />
+                <Golf className="w-6 h-6 text-white" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-col">
