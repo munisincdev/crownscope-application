@@ -1,8 +1,12 @@
 import { Settings } from "lucide-react";
 import { EmailDropdown } from "./header/EmailDropdown";
 import { NotificationDropdown } from "./header/NotificationDropdown";
+import { useState } from "react";
+import { SettingsDialog } from "./settings/SettingsDialog";
 
 export const Header = () => {
+  const [showSettings, setShowSettings] = useState(false);
+  
   const recentEmails = [
     {
       id: 1,
@@ -95,10 +99,18 @@ export const Header = () => {
       <div className="flex gap-4">
         <EmailDropdown recentEmails={recentEmails} />
         <NotificationDropdown notifications={notifications} />
-        <div className="bg-primary hover:bg-primary-light transition-colors duration-200 p-2 rounded-full">
+        <button 
+          onClick={() => setShowSettings(true)}
+          className="bg-primary hover:bg-primary-light transition-colors duration-200 p-2 rounded-full"
+        >
           <Settings className="w-4 h-4 text-white" />
-        </div>
+        </button>
       </div>
+
+      <SettingsDialog 
+        open={showSettings}
+        onOpenChange={setShowSettings}
+      />
     </header>
   );
 };
