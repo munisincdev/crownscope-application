@@ -41,6 +41,51 @@ export const Header = () => {
     },
   ];
 
+  const notifications = [
+    {
+      id: 1,
+      title: "Document Upload Required",
+      description: "Please upload your medical report for claim processing",
+      type: "action_required",
+      date: "2024-03-15T16:30:00",
+      read: false,
+    },
+    {
+      id: 2,
+      title: "Claim Update",
+      description: "Your claim has been approved. Check details.",
+      type: "update",
+      date: "2024-03-14T11:20:00",
+      read: false,
+    },
+    {
+      id: 3,
+      title: "Policy Renewal",
+      description: "Your policy expires in 30 days. Renew now.",
+      type: "reminder",
+      date: "2024-03-13T09:45:00",
+      read: true,
+    },
+    {
+      id: 4,
+      title: "Complete Purchase",
+      description: "Continue with your travel insurance purchase",
+      type: "action_required",
+      date: "2024-03-12T14:15:00",
+      read: true,
+    },
+    {
+      id: 5,
+      title: "Information Update",
+      description: "Please update your contact information",
+      type: "action_required",
+      date: "2024-03-11T10:30:00",
+      read: true,
+    },
+  ];
+
+  const unreadNotifications = notifications.filter(notif => !notif.read).length;
+
   return (
     <header className="flex justify-between items-center bg-white px-6 py-3 shadow-sm">
       <img 
@@ -88,12 +133,52 @@ export const Header = () => {
             ))}
           </DropdownMenuContent>
         </DropdownMenu>
-        <div className="relative">
-          <div className="bg-primary hover:bg-primary-light transition-colors duration-200 p-2 rounded-full">
-            <Bell className="w-4 h-4 text-white" />
-          </div>
-          <Badge className="absolute -top-2 -right-2 bg-secondary text-white text-xs">1</Badge>
-        </div>
+
+        <DropdownMenu>
+          <DropdownMenuTrigger className="relative">
+            <div className="bg-primary hover:bg-primary-light transition-colors duration-200 p-2 rounded-full">
+              <Bell className="w-4 h-4 text-white" />
+            </div>
+            {unreadNotifications > 0 && (
+              <Badge className="absolute -top-2 -right-2 bg-destructive text-white text-xs">
+                {unreadNotifications}
+              </Badge>
+            )}
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-80 p-2 bg-white border border-gray-200 shadow-lg">
+            {notifications.map((notification) => (
+              <DropdownMenuItem 
+                key={notification.id} 
+                className="flex flex-col items-start py-3 cursor-pointer hover:bg-gray-50 rounded-md focus:bg-gray-50 focus:text-inherit border-b last:border-b-0"
+              >
+                <div className="flex items-start gap-2 w-full">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-semibold text-gray-900">
+                        {notification.title}
+                      </span>
+                      {!notification.read && (
+                        <Badge className="bg-destructive text-white text-xs">Action Required</Badge>
+                      )}
+                    </div>
+                    <p className="text-sm text-gray-600 mt-1">
+                      {notification.description}
+                    </p>
+                    <span className="text-xs text-gray-500 mt-1 block">
+                      {new Date(notification.date).toLocaleDateString('en-US', {
+                        month: 'short',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                      })}
+                    </span>
+                  </div>
+                </div>
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+
         <div className="bg-primary hover:bg-primary-light transition-colors duration-200 p-2 rounded-full">
           <Settings className="w-4 h-4 text-white" />
         </div>
