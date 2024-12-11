@@ -13,7 +13,7 @@ export const InsuranceProducts = () => {
 
   return (
     <div className="bg-white rounded-lg shadow-sm p-6">
-      <h2 className="text-sm font-semibold tracking-wide text-gray-700 mb-4">Buy now</h2>
+      <h2 className="text-sm font-semibold tracking-wide text-gray-700 uppercase mb-4">Buy now</h2>
       <ProductGrid onProductSelect={handleProductClick} />
       <ChatDialog
         isOpen={isDialogOpen}
