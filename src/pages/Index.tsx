@@ -19,12 +19,12 @@ const Index = () => {
       <Header />
       
       <main className="space-y-4 px-4 pt-6">
-        <div className="px-3">
+        <div className="px-4">
           <h1 className="text-lg font-semibold tracking-wide mb-3 flex items-center text-gray-700">
             Good morning, Brian
             {getTimeIcon()}
           </h1>
-          <p className="text-xs tracking-wide text-gray-500 ml-[2px]">
+          <p className="text-xs tracking-wide text-gray-500">
             Welcome back! What would you like to do today?
             <span className="text-xs text-gray-400 ml-1 tracking-wide">· Last logged in 2 weeks ago</span>
           </p>
@@ -34,13 +34,13 @@ const Index = () => {
 
         <div className="bg-gray-50 rounded-lg">
           <div className="p-4">
-            <div className="flex justify-between items-center mb-3 px-3">
+            <div className="flex justify-between items-center mb-3 px-4">
               <h2 className="text-sm font-semibold tracking-wide text-gray-700">Most recent cover</h2>
               <button className="text-secondary hover:text-secondary-light transition-colors text-xs tracking-wide">
                 See all
               </button>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 px-4">
               <div className="bg-product-golfer w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
                 <Flag className="w-5 h-5 text-white" />
               </div>
