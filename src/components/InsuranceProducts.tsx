@@ -13,7 +13,7 @@ export const InsuranceProducts = () => {
 
   return (
     <div className="bg-white rounded-lg shadow-sm">
-      <div className="p-3 md:p-5">
+      <div className="p-4 md:p-6">
         <h2 className="text-sm md:text-base font-semibold tracking-wide text-gray-700 text-left mb-3 md:mb-4">Buy now</h2>
         <ProductGrid onProductSelect={handleProductClick} />
       </div>
