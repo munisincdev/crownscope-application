@@ -62,7 +62,7 @@ export const ProductGrid = ({ onProductSelect }: ProductGridProps) => {
 
       <button
         key={products[3].label}
-        className="flex flex-col items-center justify-center gap-3 py-2 group col-start-2"
+        className="flex flex-col items-center justify-center gap-3 py-2 group"
         onClick={() => onProductSelect(products[3].label)}
       >
         <div className={`${products[3].color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
@@ -75,7 +75,7 @@ export const ProductGrid = ({ onProductSelect }: ProductGridProps) => {
 
       <button
         key={products[4].label}
-        className="flex flex-col items-center justify-center gap-3 py-2 group"
+        className="flex flex-col items-center justify-center gap-3 py-2 group col-start-2"
         onClick={() => onProductSelect(products[4].label)}
       >
         <div className={`${products[4].color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
