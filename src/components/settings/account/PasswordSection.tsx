@@ -39,7 +39,7 @@ export const PasswordSection = ({
             type="password"
             value={currentPassword}
             onChange={(e) => onCurrentPasswordChange(e.target.value)}
-            className="w-full"
+            className="w-full text-sm"
           />
         </div>
 
@@ -50,7 +50,7 @@ export const PasswordSection = ({
             type="password"
             value={newPassword}
             onChange={(e) => onNewPasswordChange(e.target.value)}
-            className="w-full"
+            className="w-full text-sm"
           />
         </div>
 
@@ -61,7 +61,7 @@ export const PasswordSection = ({
             type="password"
             value={confirmPassword}
             onChange={(e) => onConfirmPasswordChange(e.target.value)}
-            className="w-full"
+            className="w-full text-sm"
           />
         </div>
       </div>

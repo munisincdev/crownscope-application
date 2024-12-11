@@ -66,7 +66,7 @@ export const ProfileSection = ({
             id="name"
             value={name}
             onChange={(e) => onNameChange(e.target.value)}
-            className="w-full"
+            className="w-full text-sm"
           />
         </div>
 
@@ -80,7 +80,7 @@ export const ProfileSection = ({
             type="email"
             value={email}
             onChange={(e) => onEmailChange(e.target.value)}
-            className="w-full"
+            className="w-full text-sm"
           />
         </div>
 
@@ -94,7 +94,7 @@ export const ProfileSection = ({
             type="tel"
             value={phone}
             onChange={(e) => onPhoneChange(e.target.value)}
-            className="w-full"
+            className="w-full text-sm"
           />
         </div>
       </div>
