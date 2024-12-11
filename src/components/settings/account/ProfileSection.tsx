@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Camera, Mail, Phone, User } from "lucide-react";
-import { useToast } from "@/components/ui/use-toast";
 
 interface ProfileSectionProps {
   name: string;

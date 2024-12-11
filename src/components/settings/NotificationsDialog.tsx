@@ -44,13 +44,13 @@ export const NotificationsDialog = ({ open, onOpenChange }: NotificationsDialogP
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md bg-white p-0 gap-0">
+      <DialogContent className="sm:max-w-md bg-white p-0 gap-0 max-h-[90vh] overflow-y-auto">
         <DialogHeader className="p-4 space-y-0 border-b sticky top-0 bg-white z-10">
           <div className="flex items-center gap-2">
             <Button 
               variant="ghost" 
               size="icon" 
-              className="text-primary hover:text-primary-light hover:bg-primary/10"
+              className="text-primary hover:text-primary hover:bg-primary/10"
               onClick={() => onOpenChange(false)}
             >
               <ArrowLeft className="h-5 w-5" />
