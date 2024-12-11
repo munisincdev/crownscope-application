@@ -81,7 +81,7 @@ export const ChatDialog = ({ isOpen, onOpenChange, selectedProduct }: ChatDialog
             </Avatar>
             <div className="text-left">
               <DialogTitle className="text-base font-semibold tracking-wide mb-1">Chat with Prince</DialogTitle>
-              <p className="text-xs tracking-wide text-muted-foreground">Your Personal Insurance Advisor</p>
+              <p className="text-xs tracking-wide text-gray-600">Your Personal Insurance Advisor</p>
             </div>
           </div>
         </DialogHeader>
