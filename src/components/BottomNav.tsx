@@ -15,12 +15,12 @@ export const BottomNav = () => {
         {navItems.map((item) => (
           <button
             key={item.label}
-            className="flex flex-col items-center gap-1.5"
+            className="flex flex-col items-center gap-1.5 group"
           >
-            <div className="text-nav-inactive hover:text-nav transition-colors">
+            <div className="text-nav-inactive group-hover:text-primary transition-colors">
               <item.icon className="w-5 h-5" />
             </div>
-            <span className="text-xs text-nav-inactive hover:text-nav transition-colors">{item.label}</span>
+            <span className="text-xs text-nav-inactive group-hover:text-primary transition-colors">{item.label}</span>
           </button>
         ))}
       </div>
