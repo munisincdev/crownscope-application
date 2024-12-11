@@ -58,7 +58,7 @@ export const Header = () => {
         <DropdownMenu>
           <DropdownMenuTrigger className="relative">
             <div className="bg-primary hover:bg-primary-light transition-colors duration-200 p-2 rounded-full">
-              <Mail className="w-5 h-5 text-white" />
+              <Mail className="w-4 h-4 text-white" />
             </div>
             <Badge className="absolute -top-2 -right-2 bg-secondary text-white text-xs">1</Badge>
           </DropdownMenuTrigger>
@@ -90,12 +90,12 @@ export const Header = () => {
         </DropdownMenu>
         <div className="relative">
           <div className="bg-primary hover:bg-primary-light transition-colors duration-200 p-2 rounded-full">
-            <Bell className="w-5 h-5 text-white" />
+            <Bell className="w-4 h-4 text-white" />
           </div>
           <Badge className="absolute -top-2 -right-2 bg-secondary text-white text-xs">1</Badge>
         </div>
         <div className="bg-primary hover:bg-primary-light transition-colors duration-200 p-2 rounded-full">
-          <Settings className="w-5 h-5 text-white" />
+          <Settings className="w-4 h-4 text-white" />
         </div>
       </div>
     </header>
