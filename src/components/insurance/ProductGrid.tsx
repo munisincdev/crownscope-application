@@ -2,7 +2,7 @@ import { Flag, Heart, Home, Plane, Shield } from "lucide-react";
 
 const products = [
   { icon: Plane, label: "Travel insurance", color: "bg-product-travel" },
-  { icon: Heart, label: "Individual medical", color: "bg-[#FFDEE2]" },
+  { icon: Heart, label: "Individual medical", color: "bg-secondary" },
   { icon: Flag, label: "Golfer's insurance", color: "bg-product-golfer" },
   { icon: Shield, label: "Personal accident", color: "bg-product-accident" },
   { icon: Home, label: "Domestic package", color: "bg-product-domestic" },
