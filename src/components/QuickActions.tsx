@@ -9,16 +9,16 @@ const actions = [
 
 export const QuickActions = () => {
   return (
-    <div className="grid grid-cols-4 gap-3 p-3 bg-white rounded-lg shadow-sm">
+    <div className="grid grid-cols-4 gap-3 md:gap-4 p-3 md:p-6 bg-white rounded-lg shadow-sm">
       {actions.map((action) => (
         <button
           key={action.label}
-          className="flex flex-col items-center gap-2 group"
+          className="flex flex-col items-center gap-2 md:gap-3 group"
         >
-          <div className={`${action.color} p-3 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
-            <action.icon className="w-5 h-5 text-white" />
+          <div className={`${action.color} p-3 md:p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
+            <action.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
           </div>
-          <span className="text-xs tracking-wide text-center whitespace-pre-line leading-snug group-hover:text-primary">{action.label}</span>
+          <span className="text-xs md:text-sm tracking-wide text-center whitespace-pre-line leading-snug group-hover:text-primary">{action.label}</span>
         </button>
       ))}
     </div>

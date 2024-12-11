@@ -13,78 +13,39 @@ interface ProductGridProps {
 }
 
 export const ProductGrid = ({ onProductSelect }: ProductGridProps) => {
-  const TravelIcon = products[0].icon;
-  const MedicalIcon = products[1].icon;
-  const GolferIcon = products[2].icon;
-  const AccidentIcon = products[3].icon;
-  const DomesticIcon = products[4].icon;
-
   return (
-    <div className="grid grid-cols-3 gap-6">
-      <button
-        key={products[0].label}
-        className="flex flex-col items-center justify-center gap-3 py-2 group col-span-1"
-        onClick={() => onProductSelect(products[0].label)}
-      >
-        <div className={`${products[0].color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
-          <TravelIcon className="w-5 h-5 text-white" />
-        </div>
-        <span className="text-xs tracking-wide text-gray-700 text-center leading-snug min-h-[2.5rem] group-hover:text-primary whitespace-pre-line font-sans">
-          {products[0].label}
-        </span>
-      </button>
+    <div className="grid grid-cols-3 gap-6 md:gap-8">
+      {products.slice(0, 3).map((product) => (
+        <button
+          key={product.label}
+          className="flex flex-col items-center justify-center gap-3 md:gap-4 py-2 group"
+          onClick={() => onProductSelect(product.label)}
+        >
+          <div className={`${product.color} p-4 md:p-5 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
+            <product.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+          </div>
+          <span className="text-xs md:text-sm tracking-wide text-gray-700 text-center leading-snug min-h-[2.5rem] group-hover:text-primary whitespace-pre-line font-sans">
+            {product.label}
+          </span>
+        </button>
+      ))}
 
-      <button
-        key={products[1].label}
-        className="flex flex-col items-center justify-center gap-3 py-2 group col-span-1"
-        onClick={() => onProductSelect(products[1].label)}
-      >
-        <div className={`${products[1].color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
-          <MedicalIcon className="w-5 h-5 text-white" />
-        </div>
-        <span className="text-xs tracking-wide text-gray-700 text-center leading-snug min-h-[2.5rem] group-hover:text-primary whitespace-pre-line font-sans">
-          {products[1].label}
-        </span>
-      </button>
-
-      <button
-        key={products[2].label}
-        className="flex flex-col items-center justify-center gap-3 py-2 group col-span-1"
-        onClick={() => onProductSelect(products[2].label)}
-      >
-        <div className={`${products[2].color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
-          <GolferIcon className="w-5 h-5 text-white" />
-        </div>
-        <span className="text-xs tracking-wide text-gray-700 text-center leading-snug min-h-[2.5rem] group-hover:text-primary whitespace-pre-line font-sans">
-          {products[2].label}
-        </span>
-      </button>
-
-      <button
-        key={products[3].label}
-        className="flex flex-col items-center justify-center gap-3 py-2 group"
-        onClick={() => onProductSelect(products[3].label)}
-      >
-        <div className={`${products[3].color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
-          <AccidentIcon className="w-5 h-5 text-white" />
-        </div>
-        <span className="text-xs tracking-wide text-gray-700 text-center leading-snug min-h-[2.5rem] group-hover:text-primary whitespace-pre-line font-sans">
-          {products[3].label}
-        </span>
-      </button>
-
-      <button
-        key={products[4].label}
-        className="flex flex-col items-center justify-center gap-3 py-2 group col-start-2"
-        onClick={() => onProductSelect(products[4].label)}
-      >
-        <div className={`${products[4].color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
-          <DomesticIcon className="w-5 h-5 text-white" />
-        </div>
-        <span className="text-xs tracking-wide text-gray-700 text-center leading-snug min-h-[2.5rem] group-hover:text-primary whitespace-pre-line font-sans">
-          {products[4].label}
-        </span>
-      </button>
+      <div className="col-span-2 grid grid-cols-2 gap-6 md:gap-8">
+        {products.slice(3).map((product) => (
+          <button
+            key={product.label}
+            className="flex flex-col items-center justify-center gap-3 md:gap-4 py-2 group"
+            onClick={() => onProductSelect(product.label)}
+          >
+            <div className={`${product.color} p-4 md:p-5 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
+              <product.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+            </div>
+            <span className="text-xs md:text-sm tracking-wide text-gray-700 text-center leading-snug min-h-[2.5rem] group-hover:text-primary whitespace-pre-line font-sans">
+              {product.label}
+            </span>
+          </button>
+        ))}
+      </div>
     </div>
   );
 };
