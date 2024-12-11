@@ -34,25 +34,25 @@ const Index = () => {
 
         <div className="bg-gray-50 rounded-lg">
           <div className="p-4">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-base font-semibold text-gray-700">Most recent cover</h2>
-              <button className="text-secondary hover:text-secondary-light transition-colors text-sm">
+            <div className="flex justify-between items-center mb-3">
+              <h2 className="text-sm font-semibold text-gray-700">Most recent cover</h2>
+              <button className="text-secondary hover:text-secondary-light transition-colors text-xs">
                 See all
               </button>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="bg-product-golfer w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
-                <Flag className="w-6 h-6 text-white" />
+            <div className="flex items-center gap-3">
+              <div className="bg-product-golfer w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+                <Flag className="w-5 h-5 text-white" />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-col">
-                  <h3 className="font-semibold text-base mb-0.5">Golfer's</h3>
-                  <p className="text-sm text-gray-500">GOL/072244355/25</p>
+                  <h3 className="font-semibold text-sm mb-0.5">Golfer's</h3>
+                  <p className="text-xs text-gray-500">GOL/072244355/25</p>
                 </div>
               </div>
               <div className="text-right">
-                <p className="font-semibold text-base mb-0.5">-Ksh. 1,250</p>
-                <p className="text-sm text-gray-500">27 Nov, 02:45 PM</p>
+                <p className="font-semibold text-sm mb-0.5">-Ksh. 1,250</p>
+                <p className="text-xs text-gray-500">27 Nov, 02:45 PM</p>
               </div>
             </div>
           </div>
