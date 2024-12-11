@@ -64,9 +64,11 @@ export const NotificationDropdown = ({
                     </span>
                   </div>
                   {!notification.read && (
-                    <Badge className="bg-destructive text-white text-xs mb-1">
-                      Action Required
-                    </Badge>
+                    <div className="pointer-events-none select-none">
+                      <Badge className="bg-destructive text-white text-xs mb-1">
+                        Action Required
+                      </Badge>
+                    </div>
                   )}
                   <p className="text-sm text-gray-600 line-clamp-2">
                     {notification.description}
