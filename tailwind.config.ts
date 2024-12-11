@@ -28,16 +28,41 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        // Primary colors for main actions and branding
         primary: {
-          DEFAULT: "#C4A962",
+          DEFAULT: "#351c43", // Deep purple for primary brand color
+          light: "#8d779c",   // Lighter purple for hover states
           foreground: "#FFFFFF",
         },
+        // Secondary colors for supporting elements
         secondary: {
-          DEFAULT: "#8B2F97",
+          DEFAULT: "#ab1f74", // Pink for secondary actions
+          light: "#c18ab2",   // Lighter pink for hover states
           foreground: "#FFFFFF",
+        },
+        // Product-specific colors
+        product: {
+          travel: "#8da4ce",    // Blue for travel insurance
+          medical: "#1fab56",   // Green for medical insurance
+          golfer: "#8ac199",    // Sage green for golfer's insurance
+          accident: "#7f6561",  // Brown for personal accident
+          domestic: "#617b7f",  // Slate for domestic package
+        },
+        // Quick action colors
+        action: {
+          claim: "#8d779c",     // Purple for claims
+          cover: "#1fab56",     // Green for buy cover
+          documents: "#8da4ce", // Blue for documents
+          renewal: "#7f6561",   // Brown for renewal
+        },
+        // Navigation colors
+        nav: {
+          DEFAULT: "#351c43",   // Deep purple for active state
+          inactive: "#545454",  // Gray for inactive state
+          background: "#e6d0de", // Light pink for nav background
         },
         accent: {
-          DEFAULT: "#2A2A2A",
+          DEFAULT: "#ab1f74",
           foreground: "#FFFFFF",
         },
         destructive: {
@@ -45,11 +70,11 @@ export default {
           foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
-          DEFAULT: "#4A4A4A",
+          DEFAULT: "#545454",
           foreground: "#FFFFFF",
         },
         success: {
-          DEFAULT: "#4CAF50",
+          DEFAULT: "#1fab56",
           foreground: "#FFFFFF",
         },
       },
