@@ -18,7 +18,7 @@ export const QuickActions = () => {
           <div className={`${action.color} p-3 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
             <action.icon className="w-5 h-5 text-white" />
           </div>
-          <span className="text-xs text-center whitespace-pre-line group-hover:text-primary">{action.label}</span>
+          <span className="text-xs tracking-wide text-center whitespace-pre-line group-hover:text-primary">{action.label}</span>
         </button>
       ))}
     </div>

@@ -20,13 +20,13 @@ const Index = () => {
       
       <main className="space-y-4 px-4 pt-6">
         <div>
-          <h1 className="text-sm font-semibold font-headers mb-1 flex items-center text-gray-900">
+          <h1 className="text-sm font-semibold font-headers tracking-wide mb-1 flex items-center text-gray-900">
             Good morning, Brian
             {getTimeIcon()}
           </h1>
-          <p className="text-xs text-gray-500">
+          <p className="text-xs tracking-wide text-gray-500">
             Welcome back! What would you like to do today?
-            <span className="text-xs text-gray-400 ml-1">· Last logged in 2 weeks ago</span>
+            <span className="text-xs text-gray-400 ml-1 tracking-wide">· Last logged in 2 weeks ago</span>
           </p>
         </div>
 
@@ -35,8 +35,8 @@ const Index = () => {
         <div className="bg-gray-50 rounded-lg">
           <div className="p-4">
             <div className="flex justify-between items-center mb-3">
-              <h2 className="text-sm font-semibold text-gray-700">Most recent cover</h2>
-              <button className="text-secondary hover:text-secondary-light transition-colors text-xs">
+              <h2 className="text-sm font-semibold tracking-wide text-gray-700">Most recent cover</h2>
+              <button className="text-secondary hover:text-secondary-light transition-colors text-xs tracking-wide">
                 See all
               </button>
             </div>
@@ -46,13 +46,13 @@ const Index = () => {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex flex-col">
-                  <h3 className="font-semibold text-sm mb-0.5">Golfer's</h3>
-                  <p className="text-xs text-gray-500">GOL/072244355/25</p>
+                  <h3 className="font-semibold text-sm tracking-wide mb-0.5">Golfer's</h3>
+                  <p className="text-xs tracking-wide text-gray-500">GOL/072244355/25</p>
                 </div>
               </div>
               <div className="text-right">
-                <p className="font-semibold text-sm mb-0.5">-Ksh. 1,250</p>
-                <p className="text-xs text-gray-500">27 Nov, 02:45 PM</p>
+                <p className="font-semibold text-sm tracking-wide mb-0.5">-Ksh. 1,250</p>
+                <p className="text-xs tracking-wide text-gray-500">27 Nov, 02:45 PM</p>
               </div>
             </div>
           </div>

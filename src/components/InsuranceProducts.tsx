@@ -48,7 +48,7 @@ export const InsuranceProducts = () => {
 
   return (
     <div className="bg-white rounded-lg shadow-sm p-4">
-      <h2 className="text-sm font-semibold text-gray-700 mb-3">Buy now</h2>
+      <h2 className="text-sm font-semibold tracking-wide text-gray-700 mb-3">Buy now</h2>
       <div className="grid grid-cols-3 gap-3">
         {products.map((product) => (
           <button
@@ -59,7 +59,7 @@ export const InsuranceProducts = () => {
             <div className={`${product.color} p-3 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
               <product.icon className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xs text-center group-hover:text-primary">{product.label}</span>
+            <span className="text-xs tracking-wide text-center group-hover:text-primary">{product.label}</span>
           </button>
         ))}
       </div>
