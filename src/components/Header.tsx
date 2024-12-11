@@ -62,10 +62,10 @@ export const Header = () => {
             {recentEmails.map((email) => (
               <DropdownMenuItem 
                 key={email.id} 
-                className="flex flex-col items-start py-3 cursor-pointer hover:bg-gray-50 rounded-md"
+                className="flex flex-col items-start py-3 cursor-pointer hover:bg-gray-50 rounded-md focus:bg-gray-50 focus:text-inherit"
               >
                 <div className="flex items-center gap-2 w-full">
-                  <span className="text-sm font-medium truncate flex-1 text-gray-900">
+                  <span className="text-sm font-medium truncate flex-1 text-gray-900 group-hover:text-gray-900">
                     {email.subject}
                   </span>
                   {!email.read && (
