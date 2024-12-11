@@ -34,6 +34,14 @@ export const NotificationsDialog = ({ open, onOpenChange }: NotificationsDialogP
     });
   };
 
+  const handleSave = () => {
+    toast({
+      title: "Settings saved",
+      description: "Your notification preferences have been updated successfully.",
+    });
+    onOpenChange(false);
+  };
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md bg-white p-0 gap-0">
@@ -127,6 +135,13 @@ export const NotificationsDialog = ({ open, onOpenChange }: NotificationsDialogP
               />
             </div>
           </div>
+
+          <Button 
+            className="w-full bg-secondary hover:bg-secondary-light text-white"
+            onClick={handleSave}
+          >
+            Save settings
+          </Button>
         </div>
       </DialogContent>
     </Dialog>
