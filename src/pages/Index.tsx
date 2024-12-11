@@ -52,7 +52,7 @@ const Index = () => {
               </div>
               <div className="text-right">
                 <p className="text-xs font-semibold tracking-wide mb-0.5">KES 1,250</p>
-                <p className="text-[10px] text-gray-500">27 Nov, 02:45 PM</p>
+                <p className="text-[10px] text-gray-500">27 Nov, 14.45</p>
               </div>
             </div>
           </div>
