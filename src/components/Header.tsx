@@ -42,13 +42,14 @@ export const Header = () => {
   ];
 
   return (
-    <header className="flex justify-between items-center bg-white px-4 py-2">
+    <header className="flex justify-between items-center bg-white px-6 py-3 shadow-sm">
       <img 
         src="/lovable-uploads/1cd6fa64-14b1-446e-999d-5031ea3a85d8.png" 
         alt="Crownscope Insurance Brokers Logo" 
-        className="h-24 w-auto drop-shadow-md transition-transform hover:scale-105 object-contain"
+        className="h-20 w-auto drop-shadow-lg transition-transform hover:scale-105 object-contain"
         style={{ 
-          imageRendering: 'crisp-edges'
+          imageRendering: 'crisp-edges',
+          filter: 'contrast(1.1) brightness(1.05)'
         }}
         draggable="false"
         loading="eager"
