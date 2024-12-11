@@ -64,7 +64,7 @@ const Profile = () => {
                 />
               </label>
             </div>
-            <span className="text-secondary hover:text-secondary-light text-sm cursor-pointer">
+            <span className="text-secondary hover:text-secondary-light text-sm cursor-pointer transition-colors">
               Change picture
             </span>
           </div>
@@ -78,7 +78,7 @@ const Profile = () => {
               </div>
               <Button 
                 variant="ghost"
-                className="text-secondary hover:text-secondary-light"
+                className="text-secondary hover:text-white hover:bg-secondary transition-colors"
                 onClick={() => setShowEditProfile(true)}
               >
                 <Edit className="w-4 h-4 mr-2" />
@@ -96,7 +96,7 @@ const Profile = () => {
                 <h3 className="font-semibold text-gray-800">Documents on file:</h3>
                 <Button 
                   variant="ghost"
-                  className="text-secondary hover:text-secondary-light"
+                  className="text-secondary hover:text-white hover:bg-secondary transition-colors"
                   onClick={() => setShowUploadDocument(true)}
                 >
                   <Upload className="w-4 h-4 mr-2" />
