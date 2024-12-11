@@ -10,12 +10,9 @@ const Index = () => {
       <Header />
       
       <div className="p-4">
-        <div className="flex items-center gap-6 mb-6">
-          <div className="w-16 h-16 bg-gray-200 rounded-full flex-shrink-0"></div>
-          <div className="flex-1">
-            <h1 className="text-2xl font-semibold font-headers mb-1">Good morning, Brian</h1>
-            <p className="text-sm text-gray-500">Welcome back to your insurance dashboard. Last logged in 2 weeks ago.</p>
-          </div>
+        <div className="mb-6">
+          <h1 className="text-2xl font-semibold font-headers mb-1">Good morning, Brian</h1>
+          <p className="text-sm text-gray-500">Welcome back to your insurance dashboard. Last logged in 2 weeks ago.</p>
         </div>
       </div>
 
