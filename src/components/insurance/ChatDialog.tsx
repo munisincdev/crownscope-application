@@ -74,7 +74,7 @@ export const ChatDialog = ({ isOpen, onOpenChange, selectedProduct }: ChatDialog
         <DialogHeader>
           <div className="flex items-center gap-3 mb-2">
             <Avatar className="h-10 w-10">
-              <AvatarImage src="/lovable-uploads/9200986a-e7ad-4490-a49f-74100d47da51.png" alt="Prince" />
+              <AvatarImage src="/lovable-uploads/f30e9de8-22b6-4aa5-8f57-96b652aabd69.png" alt="Prince" />
               <AvatarFallback>
                 <UserRound className="h-6 w-6" />
               </AvatarFallback>
@@ -94,7 +94,7 @@ export const ChatDialog = ({ isOpen, onOpenChange, selectedProduct }: ChatDialog
             {isTyping && (
               <div className="flex items-start gap-2">
                 <Avatar className="h-8 w-8">
-                  <AvatarImage src="/lovable-uploads/9200986a-e7ad-4490-a49f-74100d47da51.png" alt="Prince" />
+                  <AvatarImage src="/lovable-uploads/f30e9de8-22b6-4aa5-8f57-96b652aabd69.png" alt="Prince" />
                   <AvatarFallback>
                     <UserRound className="h-5 w-5" />
                   </AvatarFallback>
