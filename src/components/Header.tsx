@@ -58,11 +58,14 @@ export const Header = () => {
             </div>
             <Badge className="absolute -top-2 -right-2 bg-[#ab1f74] text-white text-xs">1</Badge>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-80 p-2">
+          <DropdownMenuContent className="w-80 p-2 bg-white border border-gray-200 shadow-lg">
             {recentEmails.map((email) => (
-              <DropdownMenuItem key={email.id} className="flex flex-col items-start py-3 cursor-pointer">
+              <DropdownMenuItem 
+                key={email.id} 
+                className="flex flex-col items-start py-3 cursor-pointer hover:bg-gray-50 rounded-md"
+              >
                 <div className="flex items-center gap-2 w-full">
-                  <span className="text-sm font-medium truncate flex-1">
+                  <span className="text-sm font-medium truncate flex-1 text-gray-900">
                     {email.subject}
                   </span>
                   {!email.read && (
