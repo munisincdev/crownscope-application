@@ -25,7 +25,7 @@ const Index = () => {
             {getTimeIcon()}
           </h1>
           <p className="text-sm text-gray-500">
-            Welcome back to your insurance dashboard
+            Welcome back! What would you like to do today?
             <span className="text-xs text-gray-400 ml-1">· Last logged in 2 weeks ago</span>
           </p>
         </div>
