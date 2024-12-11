@@ -2,7 +2,7 @@ import { FileCheck, Shield, FileText, RefreshCw } from "lucide-react";
 
 const actions = [
   { icon: FileCheck, label: "Make a\nclaim", color: "bg-action-claim" },
-  { icon: Shield, label: "Individual\nmedical", color: "bg-action-cover" },
+  { icon: Shield, label: "Buy\ncover", color: "bg-action-cover" },
   { icon: FileText, label: "My\ndocuments", color: "bg-action-documents" },
   { icon: RefreshCw, label: "Renewal\ncentre", color: "bg-action-renewal" },
 ];
