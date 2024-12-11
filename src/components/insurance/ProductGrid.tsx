@@ -13,6 +13,12 @@ interface ProductGridProps {
 }
 
 export const ProductGrid = ({ onProductSelect }: ProductGridProps) => {
+  const TravelIcon = products[0].icon;
+  const MedicalIcon = products[1].icon;
+  const GolferIcon = products[2].icon;
+  const AccidentIcon = products[3].icon;
+  const DomesticIcon = products[4].icon;
+
   return (
     <div className="grid grid-cols-3 gap-6">
       <button
@@ -21,7 +27,7 @@ export const ProductGrid = ({ onProductSelect }: ProductGridProps) => {
         onClick={() => onProductSelect(products[0].label)}
       >
         <div className={`${products[0].color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
-          <products[0].icon className="w-5 h-5 text-white" />
+          <TravelIcon className="w-5 h-5 text-white" />
         </div>
         <span className="text-xs text-gray-600 text-center leading-tight min-h-[2.5rem] group-hover:text-primary">
           {products[0].label}
@@ -34,7 +40,7 @@ export const ProductGrid = ({ onProductSelect }: ProductGridProps) => {
         onClick={() => onProductSelect(products[1].label)}
       >
         <div className={`${products[1].color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
-          <products[1].icon className="w-5 h-5 text-white" />
+          <MedicalIcon className="w-5 h-5 text-white" />
         </div>
         <span className="text-xs text-gray-600 text-center leading-tight min-h-[2.5rem] group-hover:text-primary">
           {products[1].label}
@@ -47,7 +53,7 @@ export const ProductGrid = ({ onProductSelect }: ProductGridProps) => {
         onClick={() => onProductSelect(products[2].label)}
       >
         <div className={`${products[2].color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
-          <products[2].icon className="w-5 h-5 text-white" />
+          <GolferIcon className="w-5 h-5 text-white" />
         </div>
         <span className="text-xs text-gray-600 text-center leading-tight min-h-[2.5rem] group-hover:text-primary">
           {products[2].label}
@@ -60,7 +66,7 @@ export const ProductGrid = ({ onProductSelect }: ProductGridProps) => {
         onClick={() => onProductSelect(products[3].label)}
       >
         <div className={`${products[3].color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
-          <products[3].icon className="w-5 h-5 text-white" />
+          <AccidentIcon className="w-5 h-5 text-white" />
         </div>
         <span className="text-xs text-gray-600 text-center leading-tight min-h-[2.5rem] group-hover:text-primary">
           {products[3].label}
@@ -73,7 +79,7 @@ export const ProductGrid = ({ onProductSelect }: ProductGridProps) => {
         onClick={() => onProductSelect(products[4].label)}
       >
         <div className={`${products[4].color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
-          <products[4].icon className="w-5 h-5 text-white" />
+          <DomesticIcon className="w-5 h-5 text-white" />
         </div>
         <span className="text-xs text-gray-600 text-center leading-tight min-h-[2.5rem] group-hover:text-primary">
           {products[4].label}
