@@ -47,8 +47,9 @@ export const Header = () => {
       <img 
         src="/lovable-uploads/1cd6fa64-14b1-446e-999d-5031ea3a85d8.png" 
         alt="Crownscope Insurance Brokers Logo" 
-        className="h-24 drop-shadow-md transition-transform hover:scale-105 object-contain pl-2"
-        key={Date.now()}
+        className="h-24 w-auto drop-shadow-md transition-transform hover:scale-105 object-contain pl-2"
+        style={{ imageRendering: 'crisp-edges' }}
+        draggable="false"
         loading="eager"
       />
       <div className="flex gap-4 p-4">
