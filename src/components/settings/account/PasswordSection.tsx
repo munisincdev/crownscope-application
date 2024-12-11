@@ -23,43 +23,45 @@ export const PasswordSection = ({
   onChangePassword
 }: PasswordSectionProps) => {
   return (
-    <div className="space-y-4">
-      <h3 className="font-semibold text-gray-800 flex items-center gap-2 text-sm">
-        <Lock className="w-4 h-4 text-primary" />
-        Change password
-      </h3>
+    <div className="space-y-6">
+      <div className="space-y-2">
+        <h3 className="text-base font-semibold text-gray-800 flex items-center gap-2">
+          <Lock className="w-4 h-4 text-primary" />
+          Change password
+        </h3>
+      </div>
 
-      <div className="grid gap-3">
-        <div>
+      <div className="space-y-4">
+        <div className="space-y-2">
           <Label htmlFor="current-password" className="text-sm text-gray-600">Current password</Label>
           <Input
             id="current-password"
             type="password"
             value={currentPassword}
             onChange={(e) => onCurrentPasswordChange(e.target.value)}
-            className="mt-1"
+            className="w-full"
           />
         </div>
 
-        <div>
+        <div className="space-y-2">
           <Label htmlFor="new-password" className="text-sm text-gray-600">New password</Label>
           <Input
             id="new-password"
             type="password"
             value={newPassword}
             onChange={(e) => onNewPasswordChange(e.target.value)}
-            className="mt-1"
+            className="w-full"
           />
         </div>
 
-        <div>
+        <div className="space-y-2">
           <Label htmlFor="confirm-password" className="text-sm text-gray-600">Confirm new password</Label>
           <Input
             id="confirm-password"
             type="password"
             value={confirmPassword}
             onChange={(e) => onConfirmPasswordChange(e.target.value)}
-            className="mt-1"
+            className="w-full"
           />
         </div>
       </div>

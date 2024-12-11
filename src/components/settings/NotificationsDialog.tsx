@@ -59,9 +59,9 @@ export const NotificationsDialog = ({ open, onOpenChange }: NotificationsDialogP
           </div>
         </DialogHeader>
 
-        <div className="p-4 space-y-6">
-          <div className="space-y-1">
-            <h3 className="font-semibold text-gray-800 flex items-center gap-2 text-sm">
+        <div className="p-6 space-y-8">
+          <div className="space-y-2">
+            <h3 className="text-base font-semibold text-gray-800 flex items-center gap-2">
               <Bell className="w-4 h-4 text-primary" />
               Manage notifications
             </h3>
@@ -70,9 +70,9 @@ export const NotificationsDialog = ({ open, onOpenChange }: NotificationsDialogP
             </p>
           </div>
 
-          <div className="space-y-4">
-            <div className="flex items-center justify-between">
-              <div className="space-y-0.5">
+          <div className="space-y-6">
+            <div className="flex items-center justify-between space-x-4">
+              <div className="space-y-1">
                 <Label className="text-sm font-medium flex items-center gap-2">
                   <FileCheck className="w-4 h-4 text-primary" />
                   Claims update
@@ -87,8 +87,8 @@ export const NotificationsDialog = ({ open, onOpenChange }: NotificationsDialogP
               />
             </div>
 
-            <div className="flex items-center justify-between">
-              <div className="space-y-0.5">
+            <div className="flex items-center justify-between space-x-4">
+              <div className="space-y-1">
                 <Label className="text-sm font-medium flex items-center gap-2">
                   <RefreshCw className="w-4 h-4 text-primary" />
                   Auto-renew
@@ -103,8 +103,8 @@ export const NotificationsDialog = ({ open, onOpenChange }: NotificationsDialogP
               />
             </div>
 
-            <div className="flex items-center justify-between">
-              <div className="space-y-0.5">
+            <div className="flex items-center justify-between space-x-4">
+              <div className="space-y-1">
                 <Label className="text-sm font-medium flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-primary" />
                   New cover
@@ -119,8 +119,8 @@ export const NotificationsDialog = ({ open, onOpenChange }: NotificationsDialogP
               />
             </div>
 
-            <div className="flex items-center justify-between">
-              <div className="space-y-0.5">
+            <div className="flex items-center justify-between space-x-4">
+              <div className="space-y-1">
                 <Label className="text-sm font-medium flex items-center gap-2">
                   <FileEdit className="w-4 h-4 text-primary" />
                   Policy change
@@ -137,7 +137,7 @@ export const NotificationsDialog = ({ open, onOpenChange }: NotificationsDialogP
           </div>
 
           <Button 
-            className="w-full bg-secondary hover:bg-secondary-light text-white"
+            className="w-full bg-secondary hover:bg-secondary-light text-white mt-6"
             onClick={handleSave}
           >
             Save settings

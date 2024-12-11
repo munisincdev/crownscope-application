@@ -28,7 +28,7 @@ export const ProfileSection = ({
   onSave
 }: ProfileSectionProps) => {
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       <div className="flex items-center gap-4">
         <div className="relative">
           <Avatar className="w-20 h-20 border-2 border-white shadow">
@@ -56,9 +56,9 @@ export const ProfileSection = ({
         </span>
       </div>
 
-      <div className="grid gap-3">
-        <div>
-          <Label htmlFor="name" className="flex items-center gap-2 text-sm text-gray-600">
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="name" className="text-sm text-gray-600 flex items-center gap-2">
             <User className="w-4 h-4 text-primary" />
             Full name
           </Label>
@@ -66,12 +66,12 @@ export const ProfileSection = ({
             id="name"
             value={name}
             onChange={(e) => onNameChange(e.target.value)}
-            className="mt-1"
+            className="w-full"
           />
         </div>
 
-        <div>
-          <Label htmlFor="email" className="flex items-center gap-2 text-sm text-gray-600">
+        <div className="space-y-2">
+          <Label htmlFor="email" className="text-sm text-gray-600 flex items-center gap-2">
             <Mail className="w-4 h-4 text-primary" />
             Email address
           </Label>
@@ -80,12 +80,12 @@ export const ProfileSection = ({
             type="email"
             value={email}
             onChange={(e) => onEmailChange(e.target.value)}
-            className="mt-1"
+            className="w-full"
           />
         </div>
 
-        <div>
-          <Label htmlFor="phone" className="flex items-center gap-2 text-sm text-gray-600">
+        <div className="space-y-2">
+          <Label htmlFor="phone" className="text-sm text-gray-600 flex items-center gap-2">
             <Phone className="w-4 h-4 text-primary" />
             Phone number
           </Label>
@@ -94,13 +94,13 @@ export const ProfileSection = ({
             type="tel"
             value={phone}
             onChange={(e) => onPhoneChange(e.target.value)}
-            className="mt-1"
+            className="w-full"
           />
         </div>
       </div>
 
       <Button 
-        className="w-full bg-secondary hover:bg-secondary-light text-white"
+        className="w-full bg-secondary hover:bg-secondary-light text-white mt-6"
         onClick={onSave}
       >
         Save changes
