@@ -30,7 +30,7 @@ export const NotificationDropdown = ({
           <Bell className="w-4 h-4 text-white" />
         </div>
         {unreadNotifications > 0 && (
-          <Badge className="absolute -top-2 -right-2 bg-destructive text-white text-xs">
+          <Badge className="absolute -top-2 -right-2 bg-secondary text-white text-xs">
             {unreadNotifications}
           </Badge>
         )}
@@ -65,7 +65,7 @@ export const NotificationDropdown = ({
                   </div>
                   {!notification.read && (
                     <div className="pointer-events-none select-none">
-                      <Badge className="bg-destructive text-white text-xs mb-1">
+                      <Badge className="bg-secondary text-white text-xs mb-1">
                         Action Required
                       </Badge>
                     </div>
