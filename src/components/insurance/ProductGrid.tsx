@@ -29,7 +29,7 @@ export const ProductGrid = ({ onProductSelect }: ProductGridProps) => {
         <div className={`${products[0].color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
           <TravelIcon className="w-5 h-5 text-white" />
         </div>
-        <span className="text-xs font-semibold tracking-wide text-gray-700 text-center leading-tight min-h-[2.5rem] group-hover:text-primary whitespace-pre-line">
+        <span className="text-xs tracking-wide text-gray-700 text-center leading-tight min-h-[2.5rem] group-hover:text-primary whitespace-pre-line font-sans">
           {products[0].label}
         </span>
       </button>
@@ -42,7 +42,7 @@ export const ProductGrid = ({ onProductSelect }: ProductGridProps) => {
         <div className={`${products[1].color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
           <MedicalIcon className="w-5 h-5 text-white" />
         </div>
-        <span className="text-xs font-semibold tracking-wide text-gray-700 text-center leading-tight min-h-[2.5rem] group-hover:text-primary whitespace-pre-line">
+        <span className="text-xs tracking-wide text-gray-700 text-center leading-tight min-h-[2.5rem] group-hover:text-primary whitespace-pre-line font-sans">
           {products[1].label}
         </span>
       </button>
@@ -55,7 +55,7 @@ export const ProductGrid = ({ onProductSelect }: ProductGridProps) => {
         <div className={`${products[2].color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
           <GolferIcon className="w-5 h-5 text-white" />
         </div>
-        <span className="text-xs font-semibold tracking-wide text-gray-700 text-center leading-tight min-h-[2.5rem] group-hover:text-primary whitespace-pre-line">
+        <span className="text-xs tracking-wide text-gray-700 text-center leading-tight min-h-[2.5rem] group-hover:text-primary whitespace-pre-line font-sans">
           {products[2].label}
         </span>
       </button>
@@ -68,7 +68,7 @@ export const ProductGrid = ({ onProductSelect }: ProductGridProps) => {
         <div className={`${products[3].color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
           <AccidentIcon className="w-5 h-5 text-white" />
         </div>
-        <span className="text-xs font-semibold tracking-wide text-gray-700 text-center leading-tight min-h-[2.5rem] group-hover:text-primary whitespace-pre-line">
+        <span className="text-xs tracking-wide text-gray-700 text-center leading-tight min-h-[2.5rem] group-hover:text-primary whitespace-pre-line font-sans">
           {products[3].label}
         </span>
       </button>
@@ -81,7 +81,7 @@ export const ProductGrid = ({ onProductSelect }: ProductGridProps) => {
         <div className={`${products[4].color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
           <DomesticIcon className="w-5 h-5 text-white" />
         </div>
-        <span className="text-xs font-semibold tracking-wide text-gray-700 text-center leading-tight min-h-[2.5rem] group-hover:text-primary whitespace-pre-line">
+        <span className="text-xs tracking-wide text-gray-700 text-center leading-tight min-h-[2.5rem] group-hover:text-primary whitespace-pre-line font-sans">
           {products[4].label}
         </span>
       </button>
