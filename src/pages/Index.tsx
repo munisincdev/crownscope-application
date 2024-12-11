@@ -20,11 +20,11 @@ const Index = () => {
       
       <main className="space-y-4 px-4 pt-6">
         <div>
-          <h1 className="text-xl font-bold font-headers mb-1 flex items-center text-gray-900">
+          <h1 className="text-sm font-semibold font-headers mb-1 flex items-center text-gray-900">
             Good morning, Brian
             {getTimeIcon()}
           </h1>
-          <p className="text-sm text-gray-500">
+          <p className="text-xs text-gray-500">
             Welcome back! What would you like to do today?
             <span className="text-xs text-gray-400 ml-1">· Last logged in 2 weeks ago</span>
           </p>
