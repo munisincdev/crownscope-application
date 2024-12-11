@@ -1,11 +1,11 @@
 import { Flag, Heart, Home, Plane, Shield } from "lucide-react";
 
 const products = [
-  { icon: Plane, label: "Travel\ninsurance", color: "bg-product-travel" },
-  { icon: Heart, label: "Individual\nmedical", color: "bg-secondary" },
-  { icon: Flag, label: "Golfer's\ninsurance", color: "bg-product-golfer" },
-  { icon: Shield, label: "Personal\naccident", color: "bg-product-accident" },
-  { icon: Home, label: "Domestic\npackage", color: "bg-product-domestic" },
+  { icon: Plane, label: "Travel\nInsurance", color: "bg-product-travel" },
+  { icon: Heart, label: "Individual\nMedical", color: "bg-secondary" },
+  { icon: Flag, label: "Golfer's\nInsurance", color: "bg-product-golfer" },
+  { icon: Shield, label: "Personal\nAccident", color: "bg-product-accident" },
+  { icon: Home, label: "Domestic\nPackage", color: "bg-product-domestic" },
 ];
 
 interface ProductGridProps {
