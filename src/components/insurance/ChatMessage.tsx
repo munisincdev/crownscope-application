@@ -1,12 +1,16 @@
-import { UserRound } from "lucide-react";
+import { UserRound, FileText } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 interface ChatMessageProps {
   role: 'user' | 'assistant';
   content: string;
+  attachment?: {
+    name: string;
+    url: string;
+  };
 }
 
-export const ChatMessage = ({ role, content }: ChatMessageProps) => {
+export const ChatMessage = ({ role, content, attachment }: ChatMessageProps) => {
   return (
     <div className={`flex items-start gap-2 ${role === 'assistant' ? 'justify-start' : 'justify-end'}`}>
       {role === 'assistant' && (
@@ -24,7 +28,22 @@ export const ChatMessage = ({ role, content }: ChatMessageProps) => {
             : 'bg-primary text-primary-foreground'
         } ${role === 'assistant' ? 'rounded-tl-none' : 'rounded-tr-none'}`}
       >
-        {content}
+        <div className="space-y-2">
+          {content && <p>{content}</p>}
+          {attachment && (
+            <div className="flex items-center gap-2 p-2 bg-black/5 rounded">
+              <FileText className="h-4 w-4" />
+              <a
+                href={attachment.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs underline hover:no-underline truncate"
+              >
+                {attachment.name}
+              </a>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
