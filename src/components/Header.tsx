@@ -53,10 +53,10 @@ export const Header = () => {
       <div className="flex gap-4">
         <DropdownMenu>
           <DropdownMenuTrigger className="relative">
-            <div className="bg-[#351c43] p-2 rounded-full">
+            <div className="bg-primary hover:bg-primary-light transition-colors duration-200 p-2 rounded-full">
               <Mail className="w-5 h-5 text-white" />
             </div>
-            <Badge className="absolute -top-2 -right-2 bg-[#ab1f74] text-white text-xs">1</Badge>
+            <Badge className="absolute -top-2 -right-2 bg-secondary text-white text-xs">1</Badge>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-80 p-2 bg-white border border-gray-200 shadow-lg">
             {recentEmails.map((email) => (
@@ -69,7 +69,7 @@ export const Header = () => {
                     {email.subject}
                   </span>
                   {!email.read && (
-                    <Badge className="bg-[#ab1f74] text-white text-xs">New</Badge>
+                    <Badge className="bg-secondary text-white text-xs">New</Badge>
                   )}
                 </div>
                 <span className="text-xs text-gray-500 mt-1">
@@ -85,12 +85,12 @@ export const Header = () => {
           </DropdownMenuContent>
         </DropdownMenu>
         <div className="relative">
-          <div className="bg-[#351c43] p-2 rounded-full">
+          <div className="bg-primary hover:bg-primary-light transition-colors duration-200 p-2 rounded-full">
             <Bell className="w-5 h-5 text-white" />
           </div>
-          <Badge className="absolute -top-2 -right-2 bg-[#ab1f74] text-white text-xs">1</Badge>
+          <Badge className="absolute -top-2 -right-2 bg-secondary text-white text-xs">1</Badge>
         </div>
-        <div className="bg-[#351c43] p-2 rounded-full">
+        <div className="bg-primary hover:bg-primary-light transition-colors duration-200 p-2 rounded-full">
           <Settings className="w-5 h-5 text-white" />
         </div>
       </div>
