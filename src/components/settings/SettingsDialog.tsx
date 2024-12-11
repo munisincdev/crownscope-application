@@ -1,6 +1,7 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { CreditCard, Bell, HelpCircle, User, ChevronRight, ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface SettingsDialogProps {
   open: boolean;
@@ -9,6 +10,12 @@ interface SettingsDialogProps {
 
 export const SettingsDialog = ({ open, onOpenChange }: SettingsDialogProps) => {
   const userEmail = "brian.k@gmail.com";
+  const navigate = useNavigate();
+
+  const handleViewProfile = () => {
+    onOpenChange(false);
+    navigate('/profile');
+  };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -40,6 +47,7 @@ export const SettingsDialog = ({ open, onOpenChange }: SettingsDialogProps) => {
             <Button 
               variant="link" 
               className="text-secondary hover:text-secondary-light text-sm px-0"
+              onClick={handleViewProfile}
             >
               View profile
             </Button>
