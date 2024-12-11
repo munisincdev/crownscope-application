@@ -61,7 +61,7 @@ export const ProfileSection = ({
         <div>
           <Label htmlFor="name" className="flex items-center gap-2 text-sm text-gray-600">
             <User className="w-4 h-4 text-primary" />
-            Full Name
+            Full name
           </Label>
           <Input
             id="name"
@@ -74,7 +74,7 @@ export const ProfileSection = ({
         <div>
           <Label htmlFor="email" className="flex items-center gap-2 text-sm text-gray-600">
             <Mail className="w-4 h-4 text-primary" />
-            Email
+            Email address
           </Label>
           <Input
             id="email"
@@ -88,7 +88,7 @@ export const ProfileSection = ({
         <div>
           <Label htmlFor="phone" className="flex items-center gap-2 text-sm text-gray-600">
             <Phone className="w-4 h-4 text-primary" />
-            Phone Number
+            Phone number
           </Label>
           <Input
             id="phone"
@@ -104,7 +104,7 @@ export const ProfileSection = ({
         className="w-full bg-secondary hover:bg-secondary-light text-white"
         onClick={onSave}
       >
-        Save Changes
+        Save changes
       </Button>
     </div>
   );

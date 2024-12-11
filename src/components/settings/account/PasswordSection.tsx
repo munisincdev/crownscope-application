@@ -26,12 +26,12 @@ export const PasswordSection = ({
     <div className="space-y-4">
       <h3 className="font-semibold text-gray-800 flex items-center gap-2 text-sm">
         <Lock className="w-4 h-4 text-primary" />
-        Change Password
+        Change password
       </h3>
 
       <div className="grid gap-3">
         <div>
-          <Label htmlFor="current-password" className="text-sm text-gray-600">Current Password</Label>
+          <Label htmlFor="current-password" className="text-sm text-gray-600">Current password</Label>
           <Input
             id="current-password"
             type="password"
@@ -42,7 +42,7 @@ export const PasswordSection = ({
         </div>
 
         <div>
-          <Label htmlFor="new-password" className="text-sm text-gray-600">New Password</Label>
+          <Label htmlFor="new-password" className="text-sm text-gray-600">New password</Label>
           <Input
             id="new-password"
             type="password"
@@ -53,7 +53,7 @@ export const PasswordSection = ({
         </div>
 
         <div>
-          <Label htmlFor="confirm-password" className="text-sm text-gray-600">Confirm New Password</Label>
+          <Label htmlFor="confirm-password" className="text-sm text-gray-600">Confirm new password</Label>
           <Input
             id="confirm-password"
             type="password"
@@ -68,7 +68,7 @@ export const PasswordSection = ({
         className="w-full bg-secondary hover:bg-secondary-light text-white"
         onClick={onChangePassword}
       >
-        Change Password
+        Change password
       </Button>
     </div>
   );
