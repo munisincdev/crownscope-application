@@ -13,12 +13,12 @@ export const QuickActions = () => {
       {actions.map((action) => (
         <button
           key={action.label}
-          className="flex flex-col items-center gap-2"
+          className="flex flex-col items-center gap-2 group"
         >
-          <div className={`${action.color} p-4 rounded-full`}>
+          <div className={`${action.color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
             <action.icon className="w-6 h-6 text-white" />
           </div>
-          <span className="text-xs text-center whitespace-pre-line">{action.label}</span>
+          <span className="text-xs text-center whitespace-pre-line group-hover:text-primary">{action.label}</span>
         </button>
       ))}
     </div>

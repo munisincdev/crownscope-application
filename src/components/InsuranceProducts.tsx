@@ -53,13 +53,13 @@ export const InsuranceProducts = () => {
         {products.map((product) => (
           <button
             key={product.label}
-            className="flex flex-col items-center gap-2"
+            className="flex flex-col items-center gap-2 group"
             onClick={() => handleProductClick(product.label)}
           >
-            <div className={`${product.color} p-4 rounded-full`}>
+            <div className={`${product.color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
               <product.icon className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xs text-center">{product.label}</span>
+            <span className="text-xs text-center group-hover:text-primary">{product.label}</span>
           </button>
         ))}
       </div>
