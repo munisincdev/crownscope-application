@@ -10,17 +10,17 @@ const navItems = [
 
 export const BottomNav = () => {
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-nav-background border-t border-gray-200">
-      <div className="flex justify-between px-4 py-2">
+    <nav className="fixed bottom-0 left-0 right-0 bg-nav-background border-t border-gray-200 shadow-lg">
+      <div className="flex justify-between px-6 py-3">
         {navItems.map((item) => (
           <button
             key={item.label}
-            className="flex flex-col items-center gap-1"
+            className="flex flex-col items-center gap-1.5"
           >
-            <div className="text-nav-inactive hover:text-nav">
-              <item.icon className="w-6 h-6" />
+            <div className="text-nav-inactive hover:text-nav transition-colors">
+              <item.icon className="w-5 h-5" />
             </div>
-            <span className="text-xs text-nav-inactive hover:text-nav">{item.label}</span>
+            <span className="text-xs text-nav-inactive hover:text-nav transition-colors">{item.label}</span>
           </button>
         ))}
       </div>
