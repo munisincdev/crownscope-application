@@ -5,11 +5,11 @@ import { Button } from "./ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const products = [
-  { icon: Flag, label: "Travel Insurance", color: "bg-product-travel" },
-  { icon: Heart, label: "Individual Medical", color: "bg-product-medical" },
-  { icon: Flag, label: "Golfer's Insurance", color: "bg-product-golfer" },
-  { icon: Shield, label: "Personal Accident", color: "bg-product-accident" },
-  { icon: Home, label: "Domestic Package", color: "bg-product-domestic" },
+  { icon: Flag, label: "Travel insurance", color: "bg-product-travel" },
+  { icon: Heart, label: "Individual medical", color: "bg-product-medical" },
+  { icon: Flag, label: "Golfer's insurance", color: "bg-product-golfer" },
+  { icon: Shield, label: "Personal accident", color: "bg-product-accident" },
+  { icon: Home, label: "Domestic package", color: "bg-product-domestic" },
 ];
 
 const INITIAL_MESSAGE = "Hey there! 👋 I'm Prince, your personal insurance advisor. I'm here to help you find the perfect coverage that fits your needs. What would you like to know about";
