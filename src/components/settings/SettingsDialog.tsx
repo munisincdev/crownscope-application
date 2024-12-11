@@ -12,30 +12,30 @@ export const SettingsDialog = ({ open, onOpenChange }: SettingsDialogProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md bg-black text-white p-0 gap-0">
-        <DialogHeader className="p-4 space-y-0">
-          <div className="flex items-center gap-2 text-white">
+      <DialogContent className="sm:max-w-md bg-white p-0 gap-0">
+        <DialogHeader className="p-4 space-y-0 border-b">
+          <div className="flex items-center gap-2">
             <Button 
               variant="ghost" 
               size="icon" 
-              className="text-white hover:text-white hover:bg-white/10"
+              className="text-primary hover:text-primary-light hover:bg-primary/10"
               onClick={() => onOpenChange(false)}
             >
               <ArrowLeft className="h-5 w-5" />
             </Button>
-            <DialogTitle className="text-lg">Settings</DialogTitle>
+            <DialogTitle className="text-lg font-headers text-primary">Settings</DialogTitle>
           </div>
         </DialogHeader>
 
         <div className="space-y-2 px-2">
           {/* Profile Section */}
-          <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-white/10 cursor-pointer">
-            <div className="w-12 h-12 rounded-full bg-gray-600 flex items-center justify-center">
-              <User className="w-6 h-6 text-white" />
+          <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 cursor-pointer">
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+              <User className="w-6 h-6 text-primary" />
             </div>
             <div className="flex-1">
-              <h3 className="font-semibold">Brian Kachumbari</h3>
-              <p className="text-sm text-gray-400">{userEmail}</p>
+              <h3 className="font-semibold text-gray-800">Brian Kachumbari</h3>
+              <p className="text-sm text-gray-500">{userEmail}</p>
             </div>
             <Button 
               variant="link" 
@@ -49,11 +49,11 @@ export const SettingsDialog = ({ open, onOpenChange }: SettingsDialogProps) => {
           <div className="space-y-1 p-2">
             <Button 
               variant="ghost" 
-              className="w-full justify-between text-white hover:bg-white/10 h-14"
+              className="w-full justify-between text-gray-700 hover:bg-gray-50 h-14"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center">
-                  <User className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <User className="w-5 h-5 text-primary" />
                 </div>
                 <span>Account settings</span>
               </div>
@@ -62,11 +62,11 @@ export const SettingsDialog = ({ open, onOpenChange }: SettingsDialogProps) => {
 
             <Button 
               variant="ghost" 
-              className="w-full justify-between text-white hover:bg-white/10 h-14"
+              className="w-full justify-between text-gray-700 hover:bg-gray-50 h-14"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center">
-                  <CreditCard className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <CreditCard className="w-5 h-5 text-primary" />
                 </div>
                 <span>Billing</span>
               </div>
@@ -75,11 +75,11 @@ export const SettingsDialog = ({ open, onOpenChange }: SettingsDialogProps) => {
 
             <Button 
               variant="ghost" 
-              className="w-full justify-between text-white hover:bg-white/10 h-14"
+              className="w-full justify-between text-gray-700 hover:bg-gray-50 h-14"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center">
-                  <Bell className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Bell className="w-5 h-5 text-primary" />
                 </div>
                 <span>Notifications</span>
               </div>
@@ -88,11 +88,11 @@ export const SettingsDialog = ({ open, onOpenChange }: SettingsDialogProps) => {
 
             <Button 
               variant="ghost" 
-              className="w-full justify-between text-white hover:bg-white/10 h-14"
+              className="w-full justify-between text-gray-700 hover:bg-gray-50 h-14"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center">
-                  <HelpCircle className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <HelpCircle className="w-5 h-5 text-primary" />
                 </div>
                 <span>Help and support</span>
               </div>
