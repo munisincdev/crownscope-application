@@ -14,17 +14,17 @@ interface ProductGridProps {
 
 export const ProductGrid = ({ onProductSelect }: ProductGridProps) => {
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-3 gap-6">
       {products.map((product) => (
         <button
           key={product.label}
-          className="flex flex-col items-center gap-3 group"
+          className="flex flex-col items-center justify-center gap-3 py-2 group"
           onClick={() => onProductSelect(product.label)}
         >
-          <div className={`${product.color} p-3.5 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
+          <div className={`${product.color} p-4 rounded-full transform transition-all duration-200 group-hover:scale-110 group-hover:shadow-md`}>
             <product.icon className="w-5 h-5 text-white" />
           </div>
-          <span className="text-xs text-gray-600 text-center leading-tight group-hover:text-primary">
+          <span className="text-xs text-gray-600 text-center leading-tight min-h-[2.5rem] group-hover:text-primary">
             {product.label}
           </span>
         </button>
