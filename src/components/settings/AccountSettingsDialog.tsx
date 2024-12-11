@@ -84,7 +84,7 @@ export const AccountSettingsDialog = ({ open, onOpenChange }: AccountSettingsDia
             >
               <ArrowLeft className="h-5 w-5" />
             </Button>
-            <DialogTitle className="text-lg font-headers text-primary">Account Settings</DialogTitle>
+            <DialogTitle className="text-lg font-headers text-primary">Account settings</DialogTitle>
           </div>
         </DialogHeader>
 
