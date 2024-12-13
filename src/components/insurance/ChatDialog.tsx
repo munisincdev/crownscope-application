@@ -5,8 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ChatMessage } from "./ChatMessage";
 import { useToast } from "@/components/ui/use-toast";
-
-const INITIAL_MESSAGE = "Hey there! 👋 I'm Prince, your personal insurance advisor. I'm here to help you find the perfect coverage that fits your needs. What would you like to know about";
+import { useAuth } from "@/contexts/AuthContext";
 
 interface ChatDialogProps {
   isOpen: boolean;
@@ -16,9 +15,13 @@ interface ChatDialogProps {
 
 export const ChatDialog = ({ isOpen, onOpenChange, selectedProduct }: ChatDialogProps) => {
   const { toast } = useToast();
+  const { user } = useAuth();
+  const firstName = user?.user_metadata?.first_name || "there";
+  
   const [messages, setMessages] = useState<Array<{ role: 'user' | 'assistant', content: string, attachment?: { name: string, url: string } }>>([
-    { role: 'assistant', content: `${INITIAL_MESSAGE} ${selectedProduct}?` }
+    { role: 'assistant', content: `Hey ${firstName}! 👋 I'm Prince, your personal insurance advisor. I'm here to help you find the perfect coverage that fits your needs. What would you like to know about ${selectedProduct}?` }
   ]);
+
   const [isTyping, setIsTyping] = useState(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
