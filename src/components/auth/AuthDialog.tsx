@@ -90,9 +90,9 @@ export const AuthDialog = ({ isOpen, onOpenChange, onSuccess }: AuthDialogProps)
           </div>
           <Button 
             type="submit" 
-            className="w-full bg-secondary hover:bg-secondary-light text-white transition-colors duration-200"
+            className="w-full bg-secondary hover:bg-secondary-light text-white transition-colors duration-200 font-medium"
           >
-            {isSignUp ? "Create account" : "Sign in"}
+            Create account
           </Button>
           <Button
             type="button"
