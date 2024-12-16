@@ -63,44 +63,44 @@ const Onboarding = () => {
         background: "linear-gradient(102.3deg, rgba(147,39,143,1) 5.9%, rgba(234,172,232,1) 64%, rgba(246,219,245,1) 89%)",
       }}
     >
-      <div className="w-full max-w-md bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8">
+      <div className="w-full max-w-md bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-12">
         <img
           src="/lovable-uploads/8763b5a0-eb49-4a9c-a858-332b4dcd2553.png"
           alt="Crownscope Insurance Brokers"
-          className="w-96 mx-auto mb-8 object-contain"
+          className="w-96 mx-auto mb-12 object-contain"
           draggable="false"
         />
         
-        <div className="space-y-6 text-center">
-          <div className="flex justify-center items-center h-16 mb-2">
+        <div className="space-y-8 text-center">
+          <div className="flex justify-center items-center h-20 mb-4">
             {OnboardingSlides[currentSlide].icon}
           </div>
-          <h1 className="font-['Open_Sans'] text-xl font-bold text-primary whitespace-pre-line leading-snug tracking-tight mb-4">
+          <h1 className="font-['Open_Sans'] text-2xl font-bold text-primary whitespace-pre-line leading-relaxed tracking-tight mb-6">
             {OnboardingSlides[currentSlide].title}
           </h1>
-          <p className="font-['Lato'] text-base text-muted leading-relaxed whitespace-pre-line">
+          <p className="font-['Lato'] text-lg text-muted leading-loose whitespace-pre-line">
             {OnboardingSlides[currentSlide].description}
           </p>
         </div>
 
-        <div className="space-y-4 mt-10">
+        <div className="space-y-6 mt-12">
           {currentSlide === OnboardingSlides.length - 1 ? (
             <Button
               onClick={handleStart}
-              className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold h-10"
+              className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold h-12"
             >
               Start here
             </Button>
           ) : (
             <Button
               onClick={handleNext}
-              className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold h-10"
+              className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold h-12"
             >
               {OnboardingSlides[currentSlide].action}
             </Button>
           )}
 
-          <div className="flex justify-center gap-2">
+          <div className="flex justify-center gap-2 py-2">
             {OnboardingSlides.map((_, index) => (
               <div
                 key={index}
@@ -113,7 +113,7 @@ const Onboarding = () => {
 
           <button
             onClick={() => setShowAuth(true)}
-            className="w-full text-center text-secondary hover:text-secondary/90 transition-colors text-sm font-medium"
+            className="w-full text-center text-secondary hover:text-secondary/90 transition-colors text-sm font-medium py-2"
           >
             Already a member? Sign in
           </button>
