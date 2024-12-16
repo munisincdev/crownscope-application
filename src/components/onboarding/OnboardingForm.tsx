@@ -4,14 +4,21 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
-import { useNavigate } from "react-router-dom";
 import { PrivacyPolicy } from "../policy/PrivacyPolicy";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 interface OnboardingFormProps {
   onBack: () => void;
   onComplete: () => void;
 }
+
+// Helper function to capitalize only the first letter of the first word
+const capitalizeFirstLetter = (str: string) => {
+  if (!str) return str;
+  return str.toLowerCase().replace(/^\w/, (c) => c.toUpperCase());
+};
 
 export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
   const [formData, setFormData] = useState({
@@ -42,6 +49,13 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
     onComplete();
   };
 
+  const handleInputChange = (field: keyof typeof formData, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: field === 'email' ? value.toLowerCase() : capitalizeFirstLetter(value)
+    }));
+  };
+
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
@@ -49,7 +63,7 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
         <Input
           id="firstName"
           value={formData.firstName}
-          onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+          onChange={(e) => handleInputChange('firstName', e.target.value)}
           required
         />
       </div>
@@ -58,7 +72,7 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
         <Input
           id="lastName"
           value={formData.lastName}
-          onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+          onChange={(e) => handleInputChange('lastName', e.target.value)}
           required
         />
       </div>
@@ -68,17 +82,19 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
           id="email"
           type="email"
           value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          onChange={(e) => handleInputChange('email', e.target.value)}
           required
         />
       </div>
       <div className="space-y-2">
         <Label htmlFor="phone">Phone Number</Label>
-        <Input
-          id="phone"
-          type="tel"
+        <PhoneInput
+          country={'ke'}
           value={formData.phone}
-          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+          onChange={(phone) => setFormData(prev => ({ ...prev, phone }))}
+          inputClass="!w-full !h-9 !text-sm"
+          containerClass="!w-full"
+          buttonClass="!h-9"
           required
         />
       </div>
