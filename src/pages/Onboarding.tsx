@@ -12,26 +12,26 @@ const OnboardingSlides = [
     icon: <Sparkles className="w-12 h-12 text-secondary" />,
   },
   {
-    title: "From days and weeks\nto seconds",
-    description: "Our proprietary AI Prince can issue cover\nand process claims in seconds",
+    title: "From days and weeks\nto mere seconds",
+    description: "Our AI Prince issues cover and\nprocesses claims instantly",
     action: "Next",
     icon: <Zap className="w-12 h-12 text-secondary" />,
   },
   {
-    title: "Impeccable claims\nrecord",
-    description: "We paid out 100 per cent of over\n3000 claims between 2015 and 2021",
+    title: "Impeccable claims\nrecord and service",
+    description: "100% claims payout rate with\nover 3000 claims processed",
     action: "Next",
     icon: <ShieldCheck className="w-12 h-12 text-secondary" />,
   },
   {
-    title: "Highly competitive\nrates",
-    description: "We're leveraging over 36 years of industry\nexperience towards getting you the best prices",
+    title: "Highly competitive\ninsurance rates",
+    description: "Leveraging 36 years of expertise\nto offer you the best prices",
     action: "Next",
     icon: <PiggyBank className="w-12 h-12 text-secondary" />,
   },
   {
     title: "Get started with the\nfuture of insurance",
-    description: "It'll take you less than 2 minutes to sign up\nso you can start getting covered immediately",
+    description: "Sign up in under 2 minutes and\nget covered immediately",
     action: "Start here",
     icon: <ArrowRightCircle className="w-12 h-12 text-secondary" />,
   },
@@ -71,30 +71,30 @@ const Onboarding = () => {
           draggable="false"
         />
         
-        <div className="space-y-8 text-center">
-          <div className="flex justify-center items-center h-16">
+        <div className="space-y-6 text-center">
+          <div className="flex justify-center items-center h-16 mb-2">
             {OnboardingSlides[currentSlide].icon}
           </div>
-          <h1 className="text-2xl font-bold font-headers text-primary whitespace-pre-line leading-tight tracking-tight">
+          <h1 className="font-headers text-xl font-bold text-primary whitespace-pre-line leading-snug tracking-tight mb-4">
             {OnboardingSlides[currentSlide].title}
           </h1>
-          <p className="text-muted text-lg leading-relaxed whitespace-pre-line font-sans">
+          <p className="font-sans text-base text-muted leading-relaxed whitespace-pre-line">
             {OnboardingSlides[currentSlide].description}
           </p>
         </div>
 
-        <div className="space-y-6 mt-12">
+        <div className="space-y-4 mt-10">
           {currentSlide === OnboardingSlides.length - 1 ? (
             <Button
               onClick={handleStart}
-              className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold py-6 h-auto text-base"
+              className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold h-10"
             >
               Start here
             </Button>
           ) : (
             <Button
               onClick={handleNext}
-              className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold py-6 h-auto text-base"
+              className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold h-10"
             >
               {OnboardingSlides[currentSlide].action}
             </Button>
