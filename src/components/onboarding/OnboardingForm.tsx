@@ -106,7 +106,7 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
           id="terms"
           checked={formData.agreeToTerms}
           onCheckedChange={(checked) => 
-            setFormData({ ...prev => ({ ...prev, agreeToTerms: checked as boolean })})
+            setFormData(prev => ({ ...prev, agreeToTerms: checked as boolean }))
           }
         />
         <div className="grid gap-1.5 leading-none">
@@ -139,7 +139,7 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
         <Button
           type="button"
           variant="ghost"
-          className="w-full"
+          className="w-full hover:bg-gray-50"
           onClick={onBack}
         >
           Back
