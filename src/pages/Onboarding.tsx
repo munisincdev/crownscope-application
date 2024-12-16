@@ -2,38 +2,38 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { AuthDialog } from "@/components/auth/AuthDialog";
 import { useNavigate } from "react-router-dom";
-import { Sparkles, Zap, Shield, PiggyBank, ArrowRightCircle } from "lucide-react";
+import { Sparkles, Zap, ShieldCheck, PiggyBank, ArrowRightCircle } from "lucide-react";
 
 const OnboardingSlides = [
   {
     title: "Stress-free insurance\nfor the 21st Century",
     description: "Africa's first AI-powered\ninsurance solution",
     action: "Get Started",
-    icon: <Sparkles className="w-12 h-12 text-secondary mb-6" />,
+    icon: <Sparkles className="w-12 h-12 text-secondary" />,
   },
   {
     title: "From days and weeks\nto seconds",
     description: "Our proprietary AI Prince can issue cover\nand process claims in seconds",
     action: "Next",
-    icon: <Zap className="w-12 h-12 text-secondary mb-6" />,
+    icon: <Zap className="w-12 h-12 text-secondary" />,
   },
   {
     title: "Impeccable claims\nrecord",
     description: "We paid out 100 per cent of over\n3000 claims between 2015 and 2021",
     action: "Next",
-    icon: <Shield className="w-12 h-12 text-secondary mb-6" />,
+    icon: <ShieldCheck className="w-12 h-12 text-secondary" />,
   },
   {
     title: "Highly competitive\nrates",
     description: "We're leveraging over 36 years of industry\nexperience towards getting you the best prices",
     action: "Next",
-    icon: <PiggyBank className="w-12 h-12 text-secondary mb-6" />,
+    icon: <PiggyBank className="w-12 h-12 text-secondary" />,
   },
   {
     title: "Get started with the\nfuture of insurance",
     description: "It'll take you less than 2 minutes to sign up\nso you can start getting covered immediately",
     action: "Start here",
-    icon: <ArrowRightCircle className="w-12 h-12 text-secondary mb-6" />,
+    icon: <ArrowRightCircle className="w-12 h-12 text-secondary" />,
   },
 ];
 
@@ -71,28 +71,30 @@ const Onboarding = () => {
           draggable="false"
         />
         
-        <div className="space-y-6 text-center mb-12">
-          {OnboardingSlides[currentSlide].icon}
-          <h1 className="text-2xl font-bold font-headers text-primary whitespace-pre-line leading-tight">
+        <div className="space-y-8 text-center">
+          <div className="flex justify-center items-center h-16">
+            {OnboardingSlides[currentSlide].icon}
+          </div>
+          <h1 className="text-2xl font-bold font-headers text-primary whitespace-pre-line leading-tight tracking-tight">
             {OnboardingSlides[currentSlide].title}
           </h1>
-          <p className="text-muted text-lg leading-relaxed whitespace-pre-line">
+          <p className="text-muted text-lg leading-relaxed whitespace-pre-line font-sans">
             {OnboardingSlides[currentSlide].description}
           </p>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-6 mt-12">
           {currentSlide === OnboardingSlides.length - 1 ? (
             <Button
               onClick={handleStart}
-              className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold py-3"
+              className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold py-6 h-auto text-base"
             >
               Start here
             </Button>
           ) : (
             <Button
               onClick={handleNext}
-              className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold py-3"
+              className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold py-6 h-auto text-base"
             >
               {OnboardingSlides[currentSlide].action}
             </Button>
