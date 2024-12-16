@@ -32,6 +32,14 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.phone) {
+      toast({
+        title: "Phone Number Required",
+        description: "Please enter your phone number to continue.",
+        variant: "destructive",
+      });
+      return;
+    }
     if (!formData.agreeToTerms) {
       toast({
         title: "Terms & Conditions",
@@ -95,7 +103,6 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
           inputClass="!w-full !h-9 !text-sm"
           containerClass="!w-full"
           buttonClass="!h-9"
-          required
         />
       </div>
 
