@@ -65,7 +65,7 @@ const Onboarding = () => {
     >
       <div className="w-full max-w-md bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8">
         <img
-          src="/lovable-uploads/1cd6fa64-14b1-446e-999d-5031ea3a85d8.png"
+          src="/lovable-uploads/8763b5a0-eb49-4a9c-a858-332b4dcd2553.png"
           alt="Crownscope Insurance Brokers"
           className="w-48 mx-auto mb-12 object-contain"
           draggable="false"

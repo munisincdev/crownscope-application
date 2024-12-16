@@ -86,13 +86,9 @@ export const Header = () => {
   return (
     <header className="flex justify-between items-center bg-white px-6 py-3 shadow-sm">
       <img 
-        src="/lovable-uploads/1cd6fa64-14b1-446e-999d-5031ea3a85d8.png" 
+        src="/lovable-uploads/8763b5a0-eb49-4a9c-a858-332b4dcd2553.png" 
         alt="Crownscope Insurance Brokers Logo" 
-        className="h-24 w-auto drop-shadow-lg transition-transform hover:scale-105 object-contain"
-        style={{ 
-          imageRendering: 'crisp-edges',
-          filter: 'contrast(1.1) brightness(1.05)'
-        }}
+        className="h-24 w-auto transition-transform hover:scale-105 object-contain"
         draggable="false"
         loading="eager"
       />
