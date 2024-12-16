@@ -81,21 +81,21 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-8 bg-gradient-to-br from-[#932790] via-[#EAACE8] to-[#F6DBF5]">
-      <div className="w-full max-w-md bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8">
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-8 bg-gradient-to-br from-[#932790] via-[#EAACE8] to-[#F6DBF5]">
+      <div className="w-full max-w-md bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-6 sm:p-8">
         <img
           src="/lovable-uploads/8763b5a0-eb49-4a9c-a858-332b4dcd2553.png"
           alt="Crownscope Insurance Brokers"
-          className="w-[56rem] mx-auto mb-8 object-contain"
+          className="w-48 sm:w-56 mx-auto mb-6 object-contain"
           draggable="false"
         />
         
-        <h1 className="text-2xl font-headers font-bold text-primary text-center mb-6">Welcome Back</h1>
+        <h1 className="text-2xl font-headers font-bold text-primary text-center mb-8">Welcome Back</h1>
         
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-4">
           {!isPINMode && (
             <>
-              <div className="space-y-2">
+              <div className="space-y-2.5">
                 <Label htmlFor="email">Email</Label>
                 <Input
                   id="email"
@@ -106,7 +106,7 @@ const Login = () => {
                   required
                 />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2.5">
                 <Label htmlFor="password">Password</Label>
                 <Input
                   id="password"
@@ -121,7 +121,7 @@ const Login = () => {
           )}
           
           {isPINMode && (
-            <div className="space-y-2">
+            <div className="space-y-2.5">
               <Label htmlFor="pin">Enter PIN</Label>
               <Input
                 id="pin"
@@ -139,7 +139,7 @@ const Login = () => {
 
           <Button 
             type="submit" 
-            className="w-full bg-secondary hover:bg-secondary-light text-white font-medium"
+            className="w-full bg-secondary hover:bg-secondary-light text-white font-medium mt-6"
           >
             Sign in
           </Button>
@@ -147,21 +147,21 @@ const Login = () => {
           <Button
             type="button"
             variant="link"
-            className="w-full text-secondary hover:text-secondary-light"
+            className="w-full text-secondary hover:text-secondary-light -mt-2"
             onClick={handlePasswordReset}
           >
             Forgot password?
           </Button>
         </form>
 
-        <div className="mt-8">
-          <p className="text-center text-sm text-gray-600 mb-4 font-sans">Or sign in with</p>
+        <div className="mt-10">
+          <p className="text-center text-sm text-gray-600 mb-5 font-sans">Or sign in with</p>
           <div className="grid grid-cols-2 gap-4">
             <Button
               type="button"
               variant="outline"
               onClick={handleBiometricAuth}
-              className="flex items-center justify-center gap-2 border-gray-200 hover:bg-gray-50"
+              className="flex items-center justify-center gap-2.5 border-gray-200 hover:bg-gray-50"
             >
               <Fingerprint className="w-4 h-4 text-primary" />
               Fingerprint
@@ -170,7 +170,7 @@ const Login = () => {
               type="button"
               variant="outline"
               onClick={handleFaceID}
-              className="flex items-center justify-center gap-2 border-gray-200 hover:bg-gray-50"
+              className="flex items-center justify-center gap-2.5 border-gray-200 hover:bg-gray-50"
             >
               <Scan className="w-4 h-4 text-primary" />
               Face ID
@@ -184,19 +184,19 @@ const Login = () => {
           >
             {isPINMode ? (
               <>
-                <Lock className="w-4 h-4 mr-2" />
+                <Lock className="w-4 h-4 mr-2.5" />
                 Use Password
               </>
             ) : (
               <>
-                <KeyRound className="w-4 h-4 mr-2" />
+                <KeyRound className="w-4 h-4 mr-2.5" />
                 Use PIN
               </>
             )}
           </Button>
         </div>
 
-        <p className="mt-8 text-center text-sm text-gray-600 font-sans">
+        <p className="mt-10 text-center text-sm text-gray-600 font-sans">
           Don't have an account?{" "}
           <button
             onClick={() => navigate("/onboarding")}
