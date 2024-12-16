@@ -132,7 +132,7 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
       <div className="space-y-4">
         <Button
           type="submit"
-          className="w-full bg-secondary hover:bg-secondary-light text-white transition-colors duration-200 font-medium"
+          className="w-full bg-secondary hover:bg-secondary-light text-white transition-colors duration-200 text-sm font-medium tracking-wide"
         >
           Create account
         </Button>
@@ -140,7 +140,7 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
           type="button"
           variant="ghost"
           onClick={onBack}
-          className="w-full text-secondary hover:text-secondary-light hover:bg-secondary/10 transition-colors duration-200"
+          className="w-full text-secondary hover:text-secondary-light hover:bg-secondary/10 transition-colors duration-200 text-sm font-medium tracking-wide"
         >
           Back
         </Button>

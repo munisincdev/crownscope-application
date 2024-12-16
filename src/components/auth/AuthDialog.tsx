@@ -90,14 +90,14 @@ export const AuthDialog = ({ isOpen, onOpenChange, onSuccess }: AuthDialogProps)
           </div>
           <Button 
             type="submit" 
-            className="w-full bg-secondary hover:bg-secondary-light text-white transition-colors duration-200 font-medium"
+            className="w-full bg-secondary hover:bg-secondary-light text-white transition-colors duration-200 text-sm font-medium tracking-wide"
           >
-            Create account
+            {isSignUp ? "Create account" : "Sign in"}
           </Button>
           <Button
             type="button"
             variant="ghost"
-            className="w-full text-secondary hover:text-secondary-light hover:bg-secondary/10 transition-colors duration-200"
+            className="w-full text-secondary hover:text-secondary-light hover:bg-secondary/10 transition-colors duration-200 text-sm font-medium tracking-wide"
             onClick={() => setIsSignUp(!isSignUp)}
           >
             {isSignUp ? "Already have an account? Sign in" : "Need an account? Sign up"}
