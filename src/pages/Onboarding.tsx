@@ -50,7 +50,7 @@ const Onboarding = () => {
             <div className="space-y-4 mt-10">
               <Button
                 onClick={handleNext}
-                className="w-full bg-secondary hover:bg-secondary/90 text-white font-semibold h-10"
+                className="w-full bg-secondary hover:bg-secondary-light text-white transition-colors duration-200 text-sm tracking-wide h-10"
               >
                 {OnboardingSlides[currentSlide].action}
               </Button>
