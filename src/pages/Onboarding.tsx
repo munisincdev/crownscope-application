@@ -49,6 +49,7 @@ const Onboarding = () => {
   };
 
   const handleStart = () => {
+    localStorage.setItem("hasSeenOnboarding", "true");
     setShowAuth(true);
   };
 
@@ -112,7 +113,7 @@ const Onboarding = () => {
           </div>
 
           <button
-            onClick={() => setShowAuth(true)}
+            onClick={() => navigate("/login")}
             className="w-full text-center text-secondary hover:text-secondary/90 transition-colors text-sm font-medium"
           >
             Already a member? Sign in

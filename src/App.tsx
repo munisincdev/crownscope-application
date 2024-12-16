@@ -7,6 +7,7 @@ import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import Index from "./pages/Index";
 import Profile from "./pages/Profile";
 import Onboarding from "./pages/Onboarding";
+import Login from "./pages/Login";
 
 const queryClient = new QueryClient();
 
@@ -18,7 +19,9 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   }
   
   if (!user) {
-    return <Navigate to="/onboarding" />;
+    // Check if user has seen onboarding
+    const hasSeenOnboarding = localStorage.getItem("hasSeenOnboarding");
+    return <Navigate to={hasSeenOnboarding ? "/login" : "/onboarding"} />;
   }
 
   return <>{children}</>;
@@ -33,6 +36,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/onboarding" element={<Onboarding />} />
+            <Route path="/login" element={<Login />} />
             <Route
               path="/"
               element={
