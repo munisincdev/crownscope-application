@@ -62,6 +62,7 @@ export const AuthDialog = ({ isOpen, onOpenChange, onSuccess }: AuthDialogProps)
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 required={isSignUp}
+                className="border-gray-200 hover:border-secondary/70 focus:border-secondary transition-colors"
               />
             </div>
           )}
@@ -73,6 +74,7 @@ export const AuthDialog = ({ isOpen, onOpenChange, onSuccess }: AuthDialogProps)
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              className="border-gray-200 hover:border-secondary/70 focus:border-secondary transition-colors"
             />
           </div>
           <div className="space-y-2">
@@ -83,15 +85,19 @@ export const AuthDialog = ({ isOpen, onOpenChange, onSuccess }: AuthDialogProps)
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              className="border-gray-200 hover:border-secondary/70 focus:border-secondary transition-colors"
             />
           </div>
-          <Button type="submit" className="w-full">
-            {isSignUp ? "Sign up" : "Sign in"}
+          <Button 
+            type="submit" 
+            className="w-full bg-secondary hover:bg-secondary-light text-white transition-colors duration-200"
+          >
+            {isSignUp ? "Create account" : "Sign in"}
           </Button>
           <Button
             type="button"
             variant="ghost"
-            className="w-full"
+            className="w-full text-secondary hover:text-secondary-light hover:bg-secondary/10 transition-colors duration-200"
             onClick={() => setIsSignUp(!isSignUp)}
           >
             {isSignUp ? "Already have an account? Sign in" : "Need an account? Sign up"}
