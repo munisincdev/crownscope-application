@@ -35,7 +35,7 @@ const OnboardingSlides = [
   {
     title: "Get started with the\nfuture of insurance",
     description: "Sign up in under 2 minutes and\nget covered immediately",
-    action: "get started",
+    action: "Get started",
     icon: <ArrowRightCircle className="w-12 h-12 text-secondary" />,
   },
 ];
