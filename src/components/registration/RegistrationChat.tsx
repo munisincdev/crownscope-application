@@ -2,10 +2,22 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { ChatMessage } from "./ChatMessage";
 import { useRegistration } from "@/hooks/useRegistration";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { UserRound } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { UserRound, Send, Upload } from "lucide-react";
+import { useState } from "react";
 
 export const RegistrationChat = () => {
-  const { messages } = useRegistration();
+  const { messages, handleUserMessage } = useRegistration();
+  const [inputMessage, setInputMessage] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (inputMessage.trim()) {
+      handleUserMessage(inputMessage);
+      setInputMessage("");
+    }
+  };
 
   return (
     <Dialog open={true}>
@@ -30,6 +42,26 @@ export const RegistrationChat = () => {
             <ChatMessage key={index} {...message} index={index} />
           ))}
         </div>
+
+        <form onSubmit={handleSubmit} className="flex items-center gap-2 mt-4">
+          <Button
+            type="button"
+            variant="outline"
+            size="icon"
+            className="shrink-0"
+          >
+            <Upload className="h-4 w-4" />
+          </Button>
+          <Input
+            value={inputMessage}
+            onChange={(e) => setInputMessage(e.target.value)}
+            placeholder="Type your message..."
+            className="flex-1"
+          />
+          <Button type="submit" size="icon" className="shrink-0">
+            <Send className="h-4 w-4" />
+          </Button>
+        </form>
       </DialogContent>
     </Dialog>
   );

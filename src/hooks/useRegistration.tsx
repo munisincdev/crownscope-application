@@ -57,6 +57,22 @@ export const useRegistration = () => {
     setMessages(prev => [...prev, message]);
   };
 
+  const handleUserMessage = (content: string) => {
+    // Add user message
+    addMessage({
+      role: 'user',
+      content
+    });
+
+    // Simulate Prince's response
+    setTimeout(() => {
+      addMessage({
+        role: 'assistant',
+        content: "I understand you're trying to communicate with me, but for now, please use the options I provide to help you complete your registration smoothly."
+      });
+    }, 1000);
+  };
+
   const handleKRAResponse = (hasKRA: boolean) => {
     if (hasKRA) {
       addMessage({
@@ -222,6 +238,7 @@ High blood pressure, heart disease, high cholestrole levels, asthma, chronic obs
 
   return {
     messages,
-    registrationData
+    registrationData,
+    handleUserMessage
   };
 };
