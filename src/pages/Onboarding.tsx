@@ -2,38 +2,38 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { AuthDialog } from "@/components/auth/AuthDialog";
 import { useNavigate } from "react-router-dom";
-import { Brain, Clock, Award, Coins, ArrowRight } from "lucide-react";
+import { Sparkles, Zap, Shield, PiggyBank, ArrowRightCircle } from "lucide-react";
 
 const OnboardingSlides = [
   {
-    title: "Stress-free insurance for the 21st Century",
-    description: "Africa's first AI-powered insurance solution",
+    title: "Stress-free insurance\nfor the 21st Century",
+    description: "Africa's first AI-powered\ninsurance solution",
     action: "Get Started",
-    icon: <Brain className="w-12 h-12 text-secondary mb-6" />,
+    icon: <Sparkles className="w-12 h-12 text-secondary mb-6" />,
   },
   {
-    title: "From days and weeks to seconds",
-    description: "Our proprietary AI Prince can issue cover and process claims in seconds",
+    title: "From days and weeks\nto seconds",
+    description: "Our proprietary AI Prince can issue cover\nand process claims in seconds",
     action: "Next",
-    icon: <Clock className="w-12 h-12 text-secondary mb-6" />,
+    icon: <Zap className="w-12 h-12 text-secondary mb-6" />,
   },
   {
-    title: "Impeccable claims record",
-    description: "We paid out 100 per cent of over 3000 claims between 2015 and 2021",
+    title: "Impeccable claims\nrecord",
+    description: "We paid out 100 per cent of over\n3000 claims between 2015 and 2021",
     action: "Next",
-    icon: <Award className="w-12 h-12 text-secondary mb-6" />,
+    icon: <Shield className="w-12 h-12 text-secondary mb-6" />,
   },
   {
-    title: "Highly competitive rates",
-    description: "We're leveraging over 36 years of industry experience towards getting you the best prices",
+    title: "Highly competitive\nrates",
+    description: "We're leveraging over 36 years of industry\nexperience towards getting you the best prices",
     action: "Next",
-    icon: <Coins className="w-12 h-12 text-secondary mb-6" />,
+    icon: <PiggyBank className="w-12 h-12 text-secondary mb-6" />,
   },
   {
-    title: "Get started with the future of insurance",
-    description: "It'll take you less than 2 minutes to sign up so you can start getting covered immediately",
+    title: "Get started with the\nfuture of insurance",
+    description: "It'll take you less than 2 minutes to sign up\nso you can start getting covered immediately",
     action: "Start here",
-    icon: <ArrowRight className="w-12 h-12 text-secondary mb-6" />,
+    icon: <ArrowRightCircle className="w-12 h-12 text-secondary mb-6" />,
   },
 ];
 
@@ -73,10 +73,10 @@ const Onboarding = () => {
         
         <div className="space-y-6 text-center mb-12">
           {OnboardingSlides[currentSlide].icon}
-          <h1 className="text-2xl font-bold font-headers text-primary">
+          <h1 className="text-2xl font-bold font-headers text-primary whitespace-pre-line leading-tight">
             {OnboardingSlides[currentSlide].title}
           </h1>
-          <p className="text-muted text-lg leading-relaxed">
+          <p className="text-muted text-lg leading-relaxed whitespace-pre-line">
             {OnboardingSlides[currentSlide].description}
           </p>
         </div>
