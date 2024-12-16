@@ -88,7 +88,7 @@ export const Header = () => {
       <img 
         src="/lovable-uploads/8763b5a0-eb49-4a9c-a858-332b4dcd2553.png" 
         alt="Crownscope Insurance Brokers Logo" 
-        className="h-24 w-auto transition-transform hover:scale-105 object-contain"
+        className="h-32 w-auto transition-transform hover:scale-105 object-contain"
         draggable="false"
         loading="eager"
       />
