@@ -67,7 +67,7 @@ const Onboarding = () => {
         <img
           src="/lovable-uploads/8763b5a0-eb49-4a9c-a858-332b4dcd2553.png"
           alt="Crownscope Insurance Brokers"
-          className="w-64 mx-auto mb-12 object-contain"
+          className="w-72 mx-auto mb-8 object-contain"
           draggable="false"
         />
         
@@ -75,10 +75,10 @@ const Onboarding = () => {
           <div className="flex justify-center items-center h-16 mb-2">
             {OnboardingSlides[currentSlide].icon}
           </div>
-          <h1 className="font-headers text-xl font-bold text-primary whitespace-pre-line leading-snug tracking-tight mb-4">
+          <h1 className="font-['Open_Sans'] text-xl font-bold text-primary whitespace-pre-line leading-snug tracking-tight mb-4">
             {OnboardingSlides[currentSlide].title}
           </h1>
-          <p className="font-sans text-base text-muted leading-relaxed whitespace-pre-line">
+          <p className="font-['Lato'] text-base text-muted leading-relaxed whitespace-pre-line">
             {OnboardingSlides[currentSlide].description}
           </p>
         </div>
