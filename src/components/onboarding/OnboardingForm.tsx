@@ -132,17 +132,18 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
       <div className="space-y-4">
         <Button
           type="submit"
-          className="w-full bg-secondary hover:bg-secondary/90 text-white"
+          className="w-full"
         >
           Create account
         </Button>
-        <button
+        <Button
           type="button"
+          variant="link"
           onClick={onBack}
-          className="w-full text-secondary hover:text-secondary-light underline text-sm"
+          className="w-full"
         >
           Back
-        </button>
+        </Button>
       </div>
     </form>
   );

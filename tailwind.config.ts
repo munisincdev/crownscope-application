@@ -44,8 +44,8 @@ export default {
         },
         // Secondary colors for supporting elements
         secondary: {
-          DEFAULT: "#ab1f74", // Pink for secondary actions
-          light: "#c18ab2",   // Lighter pink for hover states
+          DEFAULT: "#D946EF", // Brand pink for CTAs and highlights
+          light: "#e17ef4",   // Lighter pink for hover states
           foreground: "#FFFFFF",
         },
         // Product-specific colors
@@ -67,10 +67,10 @@ export default {
         nav: {
           DEFAULT: "#351c43",   // Deep purple for active state
           inactive: "#545454",  // Gray for inactive state
-          background: "#e6d0de", // Light pink for nav background
+          background: "#FFDEE2", // Soft pink for nav background
         },
         accent: {
-          DEFAULT: "#ab1f74",
+          DEFAULT: "#D946EF",
           foreground: "#FFFFFF",
         },
         destructive: {
