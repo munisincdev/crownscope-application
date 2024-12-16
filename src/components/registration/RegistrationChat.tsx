@@ -27,7 +27,7 @@ export const RegistrationChat = () => {
         
         <div className="flex flex-col gap-4 h-[300px] overflow-y-auto p-4 bg-gradient-to-b from-gray-50 to-white rounded-lg">
           {messages.map((message, index) => (
-            <ChatMessage key={index} {...message} />
+            <ChatMessage key={index} {...message} index={index} />
           ))}
         </div>
       </DialogContent>

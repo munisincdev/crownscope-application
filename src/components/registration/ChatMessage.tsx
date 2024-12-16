@@ -10,39 +10,27 @@ import { useState, useEffect } from "react";
 interface MessageProps {
   role: 'assistant' | 'user';
   content: string;
+  index: number;
   options?: {
     type: 'yesno' | 'input' | 'camera' | 'upload' | 'address' | 'calendar' | 'health';
     onResponse?: (response: any) => void;
   };
 }
 
-export const ChatMessage = ({ role, content, options }: MessageProps) => {
+export const ChatMessage = ({ role, content, index, options }: MessageProps) => {
   const { toast } = useToast();
-  const [displayedContent, setDisplayedContent] = useState('');
-  const [isTyping, setIsTyping] = useState(true);
-  const typingSpeed = 30; // milliseconds per character
+  const [isVisible, setIsVisible] = useState(false);
+  const messageDelay = 1000; // 1 second delay between messages
 
   useEffect(() => {
-    if (role === 'assistant') {
-      let currentIndex = 0;
-      setIsTyping(true);
-      
-      const typingInterval = setInterval(() => {
-        if (currentIndex < content.length) {
-          setDisplayedContent(content.slice(0, currentIndex + 1));
-          currentIndex++;
-        } else {
-          clearInterval(typingInterval);
-          setIsTyping(false);
-        }
-      }, typingSpeed);
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, index * messageDelay);
 
-      return () => clearInterval(typingInterval);
-    } else {
-      setDisplayedContent(content);
-      setIsTyping(false);
-    }
-  }, [content, role]);
+    return () => clearTimeout(timer);
+  }, [index]);
+
+  if (!isVisible) return null;
 
   return (
     <div className={`flex items-start gap-2 ${role === 'assistant' ? 'justify-start' : 'justify-end'}`}>
@@ -62,14 +50,9 @@ export const ChatMessage = ({ role, content, options }: MessageProps) => {
         } ${role === 'assistant' ? 'rounded-tl-none' : 'rounded-tr-none'}`}
       >
         <div className="space-y-2">
-          <p className="whitespace-pre-line">
-            {displayedContent}
-            {isTyping && role === 'assistant' && (
-              <span className="inline-block animate-pulse">▋</span>
-            )}
-          </p>
+          <p className="whitespace-pre-line">{content}</p>
           
-          {!isTyping && options && (
+          {options && (
             <div className="mt-4 space-y-2">
               {options.type === 'yesno' && (
                 <div className="flex gap-2">
