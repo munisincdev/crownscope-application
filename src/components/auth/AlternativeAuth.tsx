@@ -18,7 +18,7 @@ export const AlternativeAuth = ({
           type="button"
           variant="outline"
           onClick={handleBiometricAuth}
-          className="flex items-center justify-center gap-3 border-gray-200 hover:bg-gray-50"
+          className="flex items-center justify-center gap-3 border-gray-200 hover:bg-primary/10 hover:text-primary hover:border-primary transition-colors duration-200"
         >
           <Fingerprint className="w-4 h-4 text-primary" />
           Fingerprint
@@ -27,7 +27,7 @@ export const AlternativeAuth = ({
           type="button"
           variant="outline"
           onClick={handleFaceID}
-          className="flex items-center justify-center gap-3 border-gray-200 hover:bg-gray-50"
+          className="flex items-center justify-center gap-3 border-gray-200 hover:bg-primary/10 hover:text-primary hover:border-primary transition-colors duration-200"
         >
           <Scan className="w-4 h-4 text-primary" />
           Face ID
