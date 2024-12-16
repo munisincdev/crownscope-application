@@ -5,11 +5,20 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { UserRound, Send, Upload } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export const RegistrationChat = () => {
   const { messages, handleUserMessage } = useRegistration();
   const [inputMessage, setInputMessage] = useState("");
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]); // Scroll whenever messages change
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,6 +50,7 @@ export const RegistrationChat = () => {
           {messages.map((message, index) => (
             <ChatMessage key={index} {...message} index={index} />
           ))}
+          <div ref={messagesEndRef} /> {/* Invisible element to scroll to */}
         </div>
 
         <form onSubmit={handleSubmit} className="flex items-center gap-2 mt-4">
