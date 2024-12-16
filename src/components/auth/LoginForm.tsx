@@ -36,7 +36,7 @@ export const LoginForm = ({
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="border-gray-200"
+              className="border-gray-200 hover:border-secondary/70 focus:border-secondary transition-colors"
               required
             />
           </div>
@@ -47,7 +47,7 @@ export const LoginForm = ({
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="border-gray-200"
+              className="border-gray-200 hover:border-secondary/70 focus:border-secondary transition-colors"
               required
             />
           </div>
@@ -64,7 +64,7 @@ export const LoginForm = ({
             pattern="[0-9]*"
             inputMode="numeric"
             placeholder="Enter 6-digit PIN"
-            className="text-center text-2xl tracking-widest border-gray-200"
+            className="text-center text-2xl tracking-widest border-gray-200 hover:border-secondary/70 focus:border-secondary transition-colors"
             onChange={(e) => setPassword(e.target.value)}
             required
           />
@@ -74,7 +74,7 @@ export const LoginForm = ({
       <div className="space-y-3 pt-2">
         <Button 
           type="submit" 
-          className="w-full bg-secondary hover:bg-secondary-light text-white font-medium"
+          className="w-full bg-secondary hover:bg-secondary-light text-white font-medium transition-colors duration-200"
         >
           Sign in
         </Button>
@@ -82,7 +82,7 @@ export const LoginForm = ({
         <Button
           type="button"
           variant="link"
-          className="w-full text-secondary hover:text-secondary-light"
+          className="w-full text-secondary hover:text-secondary-light transition-colors duration-200"
           onClick={handlePasswordReset}
         >
           Forgot password?
@@ -93,7 +93,7 @@ export const LoginForm = ({
         type="button"
         variant="ghost"
         onClick={() => setIsPINMode(!isPINMode)}
-        className="w-full mt-4 text-primary hover:bg-primary/10"
+        className="w-full mt-4 text-primary hover:bg-primary/10 transition-colors duration-200"
       >
         {isPINMode ? (
           <>

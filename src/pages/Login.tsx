@@ -80,11 +80,15 @@ const Login = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-5 sm:p-8 bg-gradient-to-br from-[#932790] via-[#EAACE8] to-[#F6DBF5]">
       <div className="w-full max-w-md bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-7 sm:p-9">
-        <div className="space-y-7">
+        <div className="space-y-8">
           <img
             src="/lovable-uploads/8763b5a0-eb49-4a9c-a858-332b4dcd2553.png"
             alt="Crownscope Insurance Brokers"
-            className="w-48 sm:w-56 mx-auto object-contain"
+            className="w-56 sm:w-64 mx-auto object-contain"
+            style={{
+              imageRendering: 'crisp-edges',
+              transform: 'scale(1.1)',
+            }}
             draggable="false"
           />
           
@@ -110,7 +114,7 @@ const Login = () => {
             Don't have an account?{" "}
             <button
               onClick={() => navigate("/onboarding")}
-              className="text-secondary hover:text-secondary-light font-medium"
+              className="text-secondary hover:text-secondary-light font-medium transition-colors duration-200"
             >
               Sign up
             </button>
