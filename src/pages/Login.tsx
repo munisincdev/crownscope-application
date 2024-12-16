@@ -57,7 +57,7 @@ const Login = () => {
           draggable="false"
         />
         
-        <h1 className="text-2xl font-bold text-center mb-6">Welcome Back</h1>
+        <h1 className="text-2xl font-headers font-bold text-primary text-center mb-6">Welcome Back</h1>
         
         <form onSubmit={handleSubmit} className="space-y-6">
           {!isPINMode && (
@@ -69,6 +69,7 @@ const Login = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  className="border-gray-200"
                   required
                 />
               </div>
@@ -79,6 +80,7 @@ const Login = () => {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  className="border-gray-200"
                   required
                 />
               </div>
@@ -95,37 +97,40 @@ const Login = () => {
                 pattern="[0-9]*"
                 inputMode="numeric"
                 placeholder="Enter 6-digit PIN"
-                className="text-center text-2xl tracking-widest"
+                className="text-center text-2xl tracking-widest border-gray-200"
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </div>
           )}
 
-          <Button type="submit" className="w-full">
+          <Button 
+            type="submit" 
+            className="w-full bg-secondary hover:bg-secondary-light text-white font-medium"
+          >
             Sign in
           </Button>
         </form>
 
         <div className="mt-8">
-          <p className="text-center text-sm text-gray-600 mb-4">Or sign in with</p>
+          <p className="text-center text-sm text-gray-600 mb-4 font-sans">Or sign in with</p>
           <div className="grid grid-cols-2 gap-4">
             <Button
               type="button"
               variant="outline"
               onClick={handleBiometricAuth}
-              className="flex items-center justify-center gap-2"
+              className="flex items-center justify-center gap-2 border-gray-200 hover:bg-gray-50"
             >
-              <Fingerprint className="w-4 h-4" />
+              <Fingerprint className="w-4 h-4 text-primary" />
               Fingerprint
             </Button>
             <Button
               type="button"
               variant="outline"
               onClick={handleFaceID}
-              className="flex items-center justify-center gap-2"
+              className="flex items-center justify-center gap-2 border-gray-200 hover:bg-gray-50"
             >
-              <Scan className="w-4 h-4" />
+              <Scan className="w-4 h-4 text-primary" />
               Face ID
             </Button>
           </div>
@@ -133,7 +138,7 @@ const Login = () => {
             type="button"
             variant="ghost"
             onClick={() => setIsPINMode(!isPINMode)}
-            className="w-full mt-4"
+            className="w-full mt-4 text-primary hover:bg-primary/10"
           >
             {isPINMode ? (
               <>
@@ -149,11 +154,11 @@ const Login = () => {
           </Button>
         </div>
 
-        <p className="mt-8 text-center text-sm text-gray-600">
+        <p className="mt-8 text-center text-sm text-gray-600 font-sans">
           Don't have an account?{" "}
           <button
             onClick={() => navigate("/onboarding")}
-            className="text-secondary hover:text-secondary/90 font-medium"
+            className="text-secondary hover:text-secondary-light font-medium"
           >
             Sign up
           </button>
