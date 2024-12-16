@@ -8,17 +8,12 @@ import { PrivacyPolicy } from "../policy/PrivacyPolicy";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
+import { capitalizeFirstLetter } from "@/utils/textFormatting";
 
 interface OnboardingFormProps {
   onBack: () => void;
   onComplete: () => void;
 }
-
-// Helper function to capitalize only the first letter of the first word
-const capitalizeFirstLetter = (str: string) => {
-  if (!str) return str;
-  return str.toLowerCase().replace(/^\w/, (c) => c.toUpperCase());
-};
 
 export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
   const [formData, setFormData] = useState({
@@ -34,7 +29,7 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
     e.preventDefault();
     if (!formData.phone) {
       toast({
-        title: "Phone Number Required",
+        title: "Phone number required",
         description: "Please enter your phone number to continue.",
         variant: "destructive",
       });
@@ -42,7 +37,7 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
     }
     if (!formData.agreeToTerms) {
       toast({
-        title: "Terms & Conditions",
+        title: "Terms & conditions",
         description: "Please agree to the terms and conditions to continue.",
         variant: "destructive",
       });
@@ -67,7 +62,7 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
-        <Label htmlFor="firstName">First Name</Label>
+        <Label htmlFor="firstName">First name</Label>
         <Input
           id="firstName"
           value={formData.firstName}
@@ -76,7 +71,7 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="lastName">Last Name</Label>
+        <Label htmlFor="lastName">Last name</Label>
         <Input
           id="lastName"
           value={formData.lastName}
@@ -95,7 +90,7 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="phone">Phone Number</Label>
+        <Label htmlFor="phone">Phone number</Label>
         <PhoneInput
           country={'ke'}
           value={formData.phone}
@@ -111,7 +106,7 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
           id="terms"
           checked={formData.agreeToTerms}
           onCheckedChange={(checked) => 
-            setFormData({ ...formData, agreeToTerms: checked as boolean })
+            setFormData({ ...prev => ({ ...prev, agreeToTerms: checked as boolean })})
           }
         />
         <div className="grid gap-1.5 leading-none">
@@ -139,7 +134,7 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
           type="submit"
           className="w-full bg-secondary hover:bg-secondary/90 text-white"
         >
-          Create Account
+          Create account
         </Button>
         <Button
           type="button"
