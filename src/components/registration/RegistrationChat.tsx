@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Camera, Upload, MapPin, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { InputWithIcon } from "@/components/ui/input-with-icon";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/components/ui/use-toast";
 import { useAuth } from "@/contexts/AuthContext";
@@ -255,7 +256,6 @@ High blood pressure, heart disease, high cholestrole levels, asthma, chronic obs
                     
                     {message.options.type === 'camera' && (
                       <Button onClick={() => {
-                        // Implement camera capture logic
                         toast({
                           title: "Camera functionality",
                           description: "Camera capture would be implemented here"
@@ -281,7 +281,7 @@ High blood pressure, heart disease, high cholestrole levels, asthma, chronic obs
                     
                     {message.options.type === 'address' && (
                       <div className="space-y-2">
-                        <Input 
+                        <InputWithIcon 
                           placeholder="Enter your address"
                           icon={<MapPin className="w-4 h-4" />}
                         />
