@@ -10,9 +10,10 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 interface OnboardingFormProps {
   onBack: () => void;
+  onComplete: () => void;
 }
 
-export const OnboardingForm = ({ onBack }: OnboardingFormProps) => {
+export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -21,7 +22,6 @@ export const OnboardingForm = ({ onBack }: OnboardingFormProps) => {
     agreeToTerms: false,
   });
   const { toast } = useToast();
-  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,7 +39,7 @@ export const OnboardingForm = ({ onBack }: OnboardingFormProps) => {
       title: "Registration successful",
       description: "Welcome to Crownscope Insurance!",
     });
-    navigate("/");
+    onComplete();
   };
 
   return (

@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { OnboardingSlides } from "@/components/onboarding/OnboardingSlides";
 import { OnboardingForm } from "@/components/onboarding/OnboardingForm";
+import { RegistrationChat } from "@/components/registration/RegistrationChat";
 import { Button } from "@/components/ui/button";
 
 const Onboarding = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [currentStep, setCurrentStep] = useState<'slides' | 'form'>('slides');
+  const [currentStep, setCurrentStep] = useState<'slides' | 'form' | 'registration'>('slides');
 
   const handleNext = () => {
     if (currentSlide < OnboardingSlides.length - 1) {
@@ -13,6 +14,10 @@ const Onboarding = () => {
     } else {
       setCurrentStep('form');
     }
+  };
+
+  const handleRegistrationComplete = () => {
+    setCurrentStep('registration');
   };
 
   return (
@@ -62,8 +67,10 @@ const Onboarding = () => {
               </div>
             </div>
           </div>
+        ) : currentStep === 'form' ? (
+          <OnboardingForm onBack={() => setCurrentStep('slides')} onComplete={handleRegistrationComplete} />
         ) : (
-          <OnboardingForm onBack={() => setCurrentStep('slides')} />
+          <RegistrationChat />
         )}
       </div>
     </div>
