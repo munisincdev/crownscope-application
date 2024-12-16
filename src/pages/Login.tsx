@@ -6,11 +6,13 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { useAuth } from "@/contexts/AuthContext";
 import { Fingerprint, Lock, KeyRound, Scan } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isPINMode, setIsPINMode] = useState(false);
+  const [isResettingPassword, setIsResettingPassword] = useState(false);
   const { signIn } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
@@ -24,6 +26,37 @@ const Login = () => {
         description: "You have successfully signed in.",
       });
       navigate("/");
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: error instanceof Error ? error.message : "An error occurred",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handlePasswordReset = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (!email) {
+      toast({
+        title: "Error",
+        description: "Please enter your email address first",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${window.location.origin}/reset-password`,
+      });
+      
+      if (error) throw error;
+
+      toast({
+        title: "Password reset email sent",
+        description: "Please check your email for the password reset link",
+      });
     } catch (error) {
       toast({
         title: "Error",
@@ -109,6 +142,15 @@ const Login = () => {
             className="w-full bg-secondary hover:bg-secondary-light text-white font-medium"
           >
             Sign in
+          </Button>
+
+          <Button
+            type="button"
+            variant="link"
+            className="w-full text-secondary hover:text-secondary-light"
+            onClick={handlePasswordReset}
+          >
+            Forgot password?
           </Button>
         </form>
 
