@@ -67,7 +67,7 @@ const Onboarding = () => {
         <img
           src="/lovable-uploads/8763b5a0-eb49-4a9c-a858-332b4dcd2553.png"
           alt="Crownscope Insurance Brokers"
-          className="w-72 mx-auto mb-8 object-contain"
+          className="w-80 mx-auto mb-8 object-contain"
           draggable="false"
         />
         
