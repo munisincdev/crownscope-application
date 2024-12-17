@@ -9,14 +9,13 @@ interface TermsCheckboxProps {
 
 export const TermsCheckbox = ({ checked, onCheckedChange }: TermsCheckboxProps) => {
   return (
-    <div className="flex items-start space-x-2">
+    <div className="flex items-center gap-2">
       <Checkbox
         id="terms"
         checked={checked}
         onCheckedChange={(checked) => onCheckedChange(checked as boolean)}
-        className="mt-1"
       />
-      <label htmlFor="terms" className="text-sm font-medium">
+      <label htmlFor="terms" className="text-sm font-medium leading-none">
         I agree to Crownscope's{" "}
         <Dialog>
           <DialogTrigger asChild>
