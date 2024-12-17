@@ -15,14 +15,11 @@ export const TermsCheckbox = ({ checked, onCheckedChange }: TermsCheckboxProps) 
         checked={checked}
         onCheckedChange={(checked) => onCheckedChange(checked as boolean)}
       />
-      <label
-        htmlFor="terms"
-        className="text-sm font-medium leading-none flex items-center gap-1"
-      >
-        I agree to the
+      <label htmlFor="terms" className="text-sm font-medium inline-flex items-center gap-1">
+        I agree to Crownscope's{" "}
         <Dialog>
           <DialogTrigger asChild>
-            <button className="text-secondary hover:text-secondary-light underline inline-flex items-center">
+            <button className="text-secondary hover:text-secondary-light underline inline">
               terms and conditions
             </button>
           </DialogTrigger>
