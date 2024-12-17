@@ -7,6 +7,8 @@ import { useAuth } from "@/contexts/AuthContext";
 import { ClaimsMessage } from "./ClaimsMessage";
 import { PolicySelector } from "./PolicySelector";
 
+type PolicyType = "golfer" | "domestic" | "personal_accident" | "travel" | "medical";
+
 interface ClaimsDialogProps {
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
@@ -49,26 +51,7 @@ export const ClaimsDialog = ({ isOpen, onOpenChange }: ClaimsDialogProps) => {
     ]);
   };
 
-  const handleSendMessage = (content: string) => {
-    if (!content.trim()) return;
-
-    setMessages(prev => [...prev, { role: 'user', content }]);
-    
-    // Simulate Prince's response based on policy type
-    setTimeout(() => {
-      const documentRequestMessage = getDocumentRequestMessage(selectedPolicy);
-      setMessages(prev => [...prev, {
-        role: 'assistant',
-        content: documentRequestMessage,
-        type: 'document-upload'
-      }]);
-    }, 1000);
-  };
-
-  const getDocumentRequestMessage = (policyId: string | null) => {
-    // This would be replaced with actual policy type logic
-    const policyType = "golfer"; // Example
-    
+  const getDocumentRequestMessage = (policyType: PolicyType) => {
     switch(policyType) {
       case "golfer":
         return "Thank you. Could you please upload a copy of the receipt for the replacement of your item?";
@@ -140,7 +123,7 @@ export const ClaimsDialog = ({ isOpen, onOpenChange }: ClaimsDialogProps) => {
                 className="flex-1 px-4 py-2 text-sm border rounded-full bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                 onKeyPress={(e) => {
                   if (e.key === 'Enter') {
-                    handleSendMessage((e.target as HTMLInputElement).value);
+                    // Handle message sending
                     (e.target as HTMLInputElement).value = '';
                   }
                 }}
