@@ -9,18 +9,19 @@ interface TermsCheckboxProps {
 
 export const TermsCheckbox = ({ checked, onCheckedChange }: TermsCheckboxProps) => {
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-start gap-2">
       <Checkbox
         id="terms"
         checked={checked}
         onCheckedChange={(checked) => onCheckedChange(checked as boolean)}
+        className="mt-1"
       />
-      <label htmlFor="terms" className="text-sm font-medium leading-none">
-        I agree to Crownscope's{" "}
+      <label htmlFor="terms" className="text-sm font-medium leading-relaxed">
+        <span className="inline-block">I agree to Crownscope's terms and</span>
         <Dialog>
           <DialogTrigger asChild>
-            <button className="text-secondary hover:text-secondary-light underline inline ml-1">
-              terms and conditions
+            <button className="text-secondary hover:text-secondary-light underline block">
+              conditions
             </button>
           </DialogTrigger>
           <DialogContent className="sm:max-w-[500px]">
