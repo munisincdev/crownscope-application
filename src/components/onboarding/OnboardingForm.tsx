@@ -12,7 +12,12 @@ import { capitalizeFirstLetter } from "@/utils/textFormatting";
 
 interface OnboardingFormProps {
   onBack: () => void;
-  onComplete: () => void;
+  onComplete: (formData: {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+  }) => void;
 }
 
 export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
@@ -44,12 +49,17 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
       return;
     }
     
-    // Here you would typically handle the form submission
     toast({
-      title: "Registration successful",
-      description: "Welcome to Crownscope Insurance!",
+      title: "Verification required",
+      description: "Please check your phone and email for verification codes.",
     });
-    onComplete();
+    
+    onComplete({
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      phone: formData.phone,
+    });
   };
 
   const handleInputChange = (field: keyof typeof formData, value: string) => {

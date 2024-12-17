@@ -1,12 +1,18 @@
 import { useState } from "react";
 import { OnboardingSlides } from "@/components/onboarding/OnboardingSlides";
 import { OnboardingForm } from "@/components/onboarding/OnboardingForm";
+import { VerificationForm } from "@/components/onboarding/VerificationForm";
 import { RegistrationChat } from "@/components/registration/RegistrationChat";
-import { Button } from "@/components/ui/button";
 
 const Onboarding = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [currentStep, setCurrentStep] = useState<'slides' | 'form' | 'registration'>('slides');
+  const [currentStep, setCurrentStep] = useState<'slides' | 'form' | 'verification' | 'registration'>('slides');
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+  });
 
   const handleNext = () => {
     if (currentSlide < OnboardingSlides.length - 1) {
@@ -16,8 +22,9 @@ const Onboarding = () => {
     }
   };
 
-  const handleRegistrationComplete = () => {
-    setCurrentStep('registration');
+  const handleFormComplete = (data: typeof formData) => {
+    setFormData(data);
+    setCurrentStep('verification');
   };
 
   return (
@@ -35,7 +42,7 @@ const Onboarding = () => {
           draggable="false"
         />
         
-        {currentStep === 'slides' ? (
+        {currentStep === 'slides' && (
           <div className="space-y-6 text-center">
             <div className="flex justify-center items-center h-16 mb-2">
               {OnboardingSlides[currentSlide].icon}
@@ -67,9 +74,25 @@ const Onboarding = () => {
               </div>
             </div>
           </div>
-        ) : currentStep === 'form' ? (
-          <OnboardingForm onBack={() => setCurrentStep('slides')} onComplete={handleRegistrationComplete} />
-        ) : (
+        )}
+
+        {currentStep === 'form' && (
+          <OnboardingForm 
+            onBack={() => setCurrentStep('slides')} 
+            onComplete={(data) => handleFormComplete(data)} 
+          />
+        )}
+
+        {currentStep === 'verification' && (
+          <VerificationForm
+            email={formData.email}
+            phone={formData.phone}
+            onVerificationComplete={() => setCurrentStep('registration')}
+            onBack={() => setCurrentStep('form')}
+          />
+        )}
+
+        {currentStep === 'registration' && (
           <RegistrationChat />
         )}
       </div>
