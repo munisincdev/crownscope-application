@@ -9,30 +9,28 @@ interface TermsCheckboxProps {
 
 export const TermsCheckbox = ({ checked, onCheckedChange }: TermsCheckboxProps) => {
   return (
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center gap-2">
       <Checkbox
         id="terms"
         checked={checked}
         onCheckedChange={(checked) => onCheckedChange(checked as boolean)}
       />
-      <div className="grid gap-1.5 leading-none">
-        <label
-          htmlFor="terms"
-          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-        >
-          I agree to the{" "}
-          <Dialog>
-            <DialogTrigger asChild>
-              <button className="text-secondary hover:text-secondary-light underline">
-                terms and conditions
-              </button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-[500px]">
-              <PrivacyPolicy />
-            </DialogContent>
-          </Dialog>
-        </label>
-      </div>
+      <label
+        htmlFor="terms"
+        className="text-sm font-medium leading-none flex items-center gap-1"
+      >
+        I agree to the
+        <Dialog>
+          <DialogTrigger asChild>
+            <button className="text-secondary hover:text-secondary-light underline inline-flex items-center">
+              terms and conditions
+            </button>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-[500px]">
+            <PrivacyPolicy />
+          </DialogContent>
+        </Dialog>
+      </label>
     </div>
   );
 };
