@@ -17,6 +17,7 @@ interface OnboardingFormProps {
     lastName: string;
     email: string;
     phone: string;
+    password: string;
   }) => void;
 }
 
@@ -26,12 +27,32 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
     lastName: "",
     email: "",
     phone: "",
+    password: "",
+    confirmPassword: "",
     agreeToTerms: false,
   });
   const { toast } = useToast();
 
+  const validatePassword = (password: string) => {
+    const minLength = password.length >= 8;
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasLowerCase = /[a-z]/.test(password);
+    const hasNumber = /\d/.test(password);
+    
+    return {
+      isValid: minLength && hasUpperCase && hasLowerCase && hasNumber,
+      errors: {
+        minLength: !minLength ? "Password must be at least 8 characters long" : "",
+        hasUpperCase: !hasUpperCase ? "Password must contain at least one uppercase letter" : "",
+        hasLowerCase: !hasLowerCase ? "Password must contain at least one lowercase letter" : "",
+        hasNumber: !hasNumber ? "Password must contain at least one number" : "",
+      }
+    };
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
     if (!formData.phone) {
       toast({
         title: "Phone number required",
@@ -40,10 +61,31 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
       });
       return;
     }
+
     if (!formData.agreeToTerms) {
       toast({
         title: "Terms & conditions",
         description: "Please agree to the terms and conditions to continue.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const passwordValidation = validatePassword(formData.password);
+    if (!passwordValidation.isValid) {
+      const errors = Object.values(passwordValidation.errors).filter(error => error);
+      toast({
+        title: "Invalid password",
+        description: errors.join(". "),
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (formData.password !== formData.confirmPassword) {
+      toast({
+        title: "Passwords do not match",
+        description: "Please ensure your passwords match.",
         variant: "destructive",
       });
       return;
@@ -59,6 +101,7 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
       lastName: formData.lastName,
       email: formData.email,
       phone: formData.phone,
+      password: formData.password,
     });
   };
 
@@ -108,6 +151,31 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
           inputClass="!w-full !h-9 !text-sm"
           containerClass="!w-full"
           buttonClass="!h-9"
+        />
+      </div>
+      <div className="space-y-2">
+        <Label htmlFor="password">Password</Label>
+        <Input
+          id="password"
+          type="password"
+          value={formData.password}
+          onChange={(e) => setFormData(prev => ({ ...prev, password: e.target.value }))}
+          required
+          className="text-sm"
+        />
+        <p className="text-xs text-muted mt-1">
+          Password must be at least 8 characters long and contain uppercase, lowercase letters and numbers
+        </p>
+      </div>
+      <div className="space-y-2">
+        <Label htmlFor="confirmPassword">Confirm password</Label>
+        <Input
+          id="confirmPassword"
+          type="password"
+          value={formData.confirmPassword}
+          onChange={(e) => setFormData(prev => ({ ...prev, confirmPassword: e.target.value }))}
+          required
+          className="text-sm"
         />
       </div>
 
