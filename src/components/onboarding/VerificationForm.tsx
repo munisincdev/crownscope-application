@@ -81,8 +81,8 @@ export const VerificationForm = ({
             maxLength={6}
             render={({ slots }) => (
               <InputOTPGroup>
-                {slots.map((slot, index) => (
-                  <InputOTPSlot key={index} {...slot} />
+                {slots.map((slot, idx) => (
+                  <InputOTPSlot key={idx} {...slot} index={idx} />
                 ))}
               </InputOTPGroup>
             )}

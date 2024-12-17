@@ -3,6 +3,7 @@ import { OnboardingSlides } from "@/components/onboarding/OnboardingSlides";
 import { OnboardingForm } from "@/components/onboarding/OnboardingForm";
 import { VerificationForm } from "@/components/onboarding/VerificationForm";
 import { RegistrationChat } from "@/components/registration/RegistrationChat";
+import { Button } from "@/components/ui/button";
 
 const Onboarding = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
