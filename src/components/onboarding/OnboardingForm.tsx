@@ -1,14 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
-import { PrivacyPolicy } from "../policy/PrivacyPolicy";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { capitalizeFirstLetter } from "@/utils/textFormatting";
+import { validatePassword } from "@/utils/passwordValidation";
+import { TermsCheckbox } from "./TermsCheckbox";
+import { PasswordFields } from "./PasswordFields";
 
 interface OnboardingFormProps {
   onBack: () => void;
@@ -32,23 +32,6 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
     agreeToTerms: false,
   });
   const { toast } = useToast();
-
-  const validatePassword = (password: string) => {
-    const minLength = password.length >= 8;
-    const hasUpperCase = /[A-Z]/.test(password);
-    const hasLowerCase = /[a-z]/.test(password);
-    const hasNumber = /\d/.test(password);
-    
-    return {
-      isValid: minLength && hasUpperCase && hasLowerCase && hasNumber,
-      errors: {
-        minLength: !minLength ? "Password must be at least 8 characters long" : "",
-        hasUpperCase: !hasUpperCase ? "Password must contain at least one uppercase letter" : "",
-        hasLowerCase: !hasLowerCase ? "Password must contain at least one lowercase letter" : "",
-        hasNumber: !hasNumber ? "Password must contain at least one number" : "",
-      }
-    };
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -153,59 +136,22 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
           buttonClass="!h-9"
         />
       </div>
-      <div className="space-y-2">
-        <Label htmlFor="password">Password</Label>
-        <Input
-          id="password"
-          type="password"
-          value={formData.password}
-          onChange={(e) => setFormData(prev => ({ ...prev, password: e.target.value }))}
-          required
-          className="text-sm"
-        />
-        <p className="text-xs text-muted mt-1">
-          Password must be at least 8 characters long and contain uppercase, lowercase letters and numbers
-        </p>
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="confirmPassword">Confirm password</Label>
-        <Input
-          id="confirmPassword"
-          type="password"
-          value={formData.confirmPassword}
-          onChange={(e) => setFormData(prev => ({ ...prev, confirmPassword: e.target.value }))}
-          required
-          className="text-sm"
-        />
-      </div>
+      
+      <PasswordFields
+        password={formData.password}
+        confirmPassword={formData.confirmPassword}
+        onPasswordChange={(password) => setFormData(prev => ({ ...prev, password }))}
+        onConfirmPasswordChange={(confirmPassword) => 
+          setFormData(prev => ({ ...prev, confirmPassword }))
+        }
+      />
 
-      <div className="flex items-center space-x-2">
-        <Checkbox
-          id="terms"
-          checked={formData.agreeToTerms}
-          onCheckedChange={(checked) => 
-            setFormData(prev => ({ ...prev, agreeToTerms: checked as boolean }))
-          }
-        />
-        <div className="grid gap-1.5 leading-none">
-          <label
-            htmlFor="terms"
-            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-          >
-            I agree to the{" "}
-            <Dialog>
-              <DialogTrigger asChild>
-                <button className="text-secondary hover:text-secondary-light underline">
-                  terms and conditions
-                </button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-[500px]">
-                <PrivacyPolicy />
-              </DialogContent>
-            </Dialog>
-          </label>
-        </div>
-      </div>
+      <TermsCheckbox
+        checked={formData.agreeToTerms}
+        onCheckedChange={(checked) => 
+          setFormData(prev => ({ ...prev, agreeToTerms: checked }))
+        }
+      />
 
       <div className="space-y-4">
         <Button
