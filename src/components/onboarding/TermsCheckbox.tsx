@@ -14,7 +14,7 @@ export const TermsCheckbox = ({ checked, onCheckedChange }: TermsCheckboxProps) 
         id="terms"
         checked={checked}
         onCheckedChange={(checked) => onCheckedChange(checked as boolean)}
-        className="mt-1"
+        className="mt-1.5"
       />
       <label htmlFor="terms" className="text-sm font-medium leading-relaxed">
         I agree to Crownscope's terms and{" "}
