@@ -17,10 +17,10 @@ export const TermsCheckbox = ({ checked, onCheckedChange }: TermsCheckboxProps) 
         className="mt-1"
       />
       <label htmlFor="terms" className="text-sm font-medium leading-relaxed">
-        <span className="inline-block">I agree to Crownscope's terms and</span>
+        I agree to Crownscope's terms and{" "}
         <Dialog>
           <DialogTrigger asChild>
-            <button className="text-secondary hover:text-secondary-light underline block">
+            <button className="text-secondary hover:text-secondary-light underline inline">
               conditions
             </button>
           </DialogTrigger>
