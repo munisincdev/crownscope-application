@@ -4,11 +4,16 @@ import { Calendar } from "@/components/ui/calendar";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { destinations, type Destination } from "@/services/travelDestinations";
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@/components/ui/command";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
 import { Check, ChevronsUpDown } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { format } from "date-fns";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 type Step = 
   | 'destination'
@@ -156,41 +161,18 @@ export const TravelInsuranceChat = () => {
               <p className="whitespace-pre-line">{message.content}</p>
               
               {message.type === 'destination-select' && currentStep === 'destination' && (
-                <Popover>
-                  <PopoverTrigger asChild>
-                    <Button
-                      variant="outline"
-                      role="combobox"
-                      className="w-full justify-between mt-2"
-                    >
-                      {formData.destination || "Select destination..."}
-                      <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                    </Button>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-full p-0">
-                    <Command>
-                      <CommandInput placeholder="Search destination..." />
-                      <CommandEmpty>No destination found.</CommandEmpty>
-                      <CommandGroup>
-                        {Object.keys(destinations).map((destination) => (
-                          <CommandItem
-                            key={destination}
-                            value={destination}
-                            onSelect={handleDestinationSelect}
-                          >
-                            <Check
-                              className={cn(
-                                "mr-2 h-4 w-4",
-                                formData.destination === destination ? "opacity-100" : "opacity-0"
-                              )}
-                            />
-                            {destination}
-                          </CommandItem>
-                        ))}
-                      </CommandGroup>
-                    </Command>
-                  </PopoverContent>
-                </Popover>
+                <Select onValueChange={handleDestinationSelect}>
+                  <SelectTrigger className="w-full mt-2">
+                    <SelectValue placeholder="Select destination" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {Object.keys(destinations).map((destination) => (
+                      <SelectItem key={destination} value={destination}>
+                        {destination}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               )}
 
               {message.type === 'date-select' && (currentStep === 'departureDate' || currentStep === 'returnDate') && (
