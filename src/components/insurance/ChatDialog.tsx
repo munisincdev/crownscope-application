@@ -6,6 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ChatMessage } from "./ChatMessage";
 import { useToast } from "@/components/ui/use-toast";
 import { useAuth } from "@/contexts/AuthContext";
+import { TravelInsuranceChat } from "../travel/TravelInsuranceChat";
 
 interface ChatDialogProps {
   isOpen: boolean;
@@ -71,6 +72,8 @@ export const ChatDialog = ({ isOpen, onOpenChange, selectedProduct }: ChatDialog
     }, 1000);
   };
 
+  const isTravelInsurance = selectedProduct?.toLowerCase().includes('travel');
+
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[425px]">
@@ -89,80 +92,84 @@ export const ChatDialog = ({ isOpen, onOpenChange, selectedProduct }: ChatDialog
           </div>
         </DialogHeader>
         
-        <div className="flex flex-col gap-4">
-          <div className="flex flex-col gap-4 h-[300px] overflow-y-auto p-4 bg-gradient-to-b from-gray-50 to-white rounded-lg">
-            {messages.map((message, index) => (
-              <ChatMessage key={index} {...message} />
-            ))}
-            {isTyping && (
-              <div className="flex items-start gap-2">
-                <Avatar className="h-8 w-8">
-                  <AvatarImage src="/lovable-uploads/f30e9de8-22b6-4aa5-8f57-96b652aabd69.png" alt="Prince" />
-                  <AvatarFallback>
-                    <UserRound className="h-5 w-5" />
-                  </AvatarFallback>
-                </Avatar>
-                <div className="bg-white shadow-sm border p-3 rounded-2xl rounded-tl-none">
-                  <span className="text-sm">Typing...</span>
+        {isTravelInsurance ? (
+          <TravelInsuranceChat />
+        ) : (
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 h-[300px] overflow-y-auto p-4 bg-gradient-to-b from-gray-50 to-white rounded-lg">
+              {messages.map((message, index) => (
+                <ChatMessage key={index} {...message} />
+              ))}
+              {isTyping && (
+                <div className="flex items-start gap-2">
+                  <Avatar className="h-8 w-8">
+                    <AvatarImage src="/lovable-uploads/f30e9de8-22b6-4aa5-8f57-96b652aabd69.png" alt="Prince" />
+                    <AvatarFallback>
+                      <UserRound className="h-5 w-5" />
+                    </AvatarFallback>
+                  </Avatar>
+                  <div className="bg-white shadow-sm border p-3 rounded-2xl rounded-tl-none">
+                    <span className="text-sm">Typing...</span>
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                const input = e.currentTarget.elements.namedItem('message') as HTMLInputElement;
+                handleSendMessage(input.value);
+                input.value = '';
+              }}
+              className="space-y-2"
+            >
+              {selectedFile && (
+                <div className="flex items-center gap-2 p-2 bg-muted rounded-lg">
+                  <span className="text-sm truncate flex-1">{selectedFile.name}</span>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="icon"
+                    className="h-8 w-8"
+                    onClick={handleRemoveFile}
+                  >
+                    <X className="h-4 w-4" />
+                  </Button>
+                </div>
+              )}
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  name="message"
+                  placeholder="Type your message..."
+                  className="flex-1 px-4 py-2 text-sm border rounded-full bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+                />
+                <div className="flex gap-2">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="icon"
+                    className="rounded-full"
+                    onClick={() => document.getElementById('file-upload')?.click()}
+                  >
+                    <Upload className="h-4 w-4" />
+                    <input
+                      id="file-upload"
+                      type="file"
+                      className="hidden"
+                      onChange={handleFileSelect}
+                      accept="image/*,.pdf,.doc,.docx"
+                    />
+                  </Button>
+                  <Button type="submit" size="icon" className="rounded-full">
+                    <MessageCircle className="h-4 w-4" />
+                  </Button>
                 </div>
               </div>
-            )}
+            </form>
           </div>
-          
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              const input = e.currentTarget.elements.namedItem('message') as HTMLInputElement;
-              handleSendMessage(input.value);
-              input.value = '';
-            }}
-            className="space-y-2"
-          >
-            {selectedFile && (
-              <div className="flex items-center gap-2 p-2 bg-muted rounded-lg">
-                <span className="text-sm truncate flex-1">{selectedFile.name}</span>
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="icon"
-                  className="h-8 w-8"
-                  onClick={handleRemoveFile}
-                >
-                  <X className="h-4 w-4" />
-                </Button>
-              </div>
-            )}
-            <div className="flex gap-2">
-              <input
-                type="text"
-                name="message"
-                placeholder="Type your message..."
-                className="flex-1 px-4 py-2 text-sm border rounded-full bg-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-              />
-              <div className="flex gap-2">
-                <Button
-                  type="button"
-                  variant="outline"
-                  size="icon"
-                  className="rounded-full"
-                  onClick={() => document.getElementById('file-upload')?.click()}
-                >
-                  <Upload className="h-4 w-4" />
-                  <input
-                    id="file-upload"
-                    type="file"
-                    className="hidden"
-                    onChange={handleFileSelect}
-                    accept="image/*,.pdf,.doc,.docx"
-                  />
-                </Button>
-                <Button type="submit" size="icon" className="rounded-full">
-                  <MessageCircle className="h-4 w-4" />
-                </Button>
-              </div>
-            </div>
-          </form>
-        </div>
+        )}
       </DialogContent>
     </Dialog>
   );
