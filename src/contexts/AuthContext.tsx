@@ -1,3 +1,4 @@
+
 import { createContext, useContext, useEffect, useState } from 'react';
 import { User } from '@supabase/supabase-js';
 import { supabase } from '@/lib/supabase';
@@ -8,6 +9,7 @@ interface AuthContextType {
   signUp: (email: string, password: string, firstName: string) => Promise<void>;
   signIn: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
+  bypassAuth: () => void; // New method for bypassing authentication
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -58,8 +60,32 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     if (error) throw error;
   };
 
+  // Bypass authentication for development
+  const bypassAuth = () => {
+    // Create a mock user
+    setUser({
+      id: 'mock-user-id',
+      app_metadata: {},
+      user_metadata: { first_name: 'Test User' },
+      aud: 'authenticated',
+      created_at: new Date().toISOString(),
+    } as User);
+    
+    setLoading(false);
+    
+    // Set localStorage flag to indicate we're in bypass mode
+    localStorage.setItem('bypassAuth', 'true');
+  };
+
+  // Check if we should bypass auth from localStorage
+  useEffect(() => {
+    if (localStorage.getItem('bypassAuth') === 'true') {
+      bypassAuth();
+    }
+  }, []);
+
   return (
-    <AuthContext.Provider value={{ user, loading, signUp, signIn, signOut }}>
+    <AuthContext.Provider value={{ user, loading, signUp, signIn, signOut, bypassAuth }}>
       {children}
     </AuthContext.Provider>
   );

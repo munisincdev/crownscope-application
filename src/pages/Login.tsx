@@ -5,12 +5,13 @@ import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/lib/supabase";
 import { LoginForm } from "@/components/auth/LoginForm";
 import { AlternativeAuth } from "@/components/auth/AlternativeAuth";
+import { Button } from "@/components/ui/button";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isPINMode, setIsPINMode] = useState(false);
-  const { signIn } = useAuth();
+  const { signIn, bypassAuth } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
 
@@ -77,6 +78,15 @@ const Login = () => {
     });
   };
 
+  const handleBypassAuth = () => {
+    bypassAuth();
+    toast({
+      title: "Development Mode",
+      description: "Authentication bypassed. You now have access to all features.",
+    });
+    navigate("/");
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-5 sm:p-8 bg-gradient-to-br from-[#932790] via-[#EAACE8] to-[#F6DBF5]">
       <div className="w-full max-w-md bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-7 sm:p-9">
@@ -109,6 +119,14 @@ const Login = () => {
             handleBiometricAuth={handleBiometricAuth}
             handleFaceID={handleFaceID}
           />
+
+          <Button 
+            variant="outline"
+            onClick={handleBypassAuth}
+            className="w-full border-dashed border-yellow-400 text-yellow-600 hover:bg-yellow-50"
+          >
+            Development: Skip Authentication
+          </Button>
 
           <p className="text-center text-sm text-gray-600 font-sans">
             Don't have an account?{" "}
