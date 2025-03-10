@@ -1,19 +1,18 @@
+
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { OnboardingSlides } from "@/components/onboarding/OnboardingSlides";
 import { OnboardingForm } from "@/components/onboarding/OnboardingForm";
-import { VerificationForm } from "@/components/onboarding/VerificationForm";
-import { RegistrationChat } from "@/components/registration/RegistrationChat";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/contexts/AuthContext";
+import { useToast } from "@/components/ui/use-toast";
 
 const Onboarding = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [currentStep, setCurrentStep] = useState<'slides' | 'form' | 'verification' | 'registration'>('slides');
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-  });
+  const [currentStep, setCurrentStep] = useState<'slides' | 'form'>('slides');
+  const { bypassAuth } = useAuth();
+  const navigate = useNavigate();
+  const { toast } = useToast();
 
   const handleNext = () => {
     if (currentSlide < OnboardingSlides.length - 1) {
@@ -23,9 +22,25 @@ const Onboarding = () => {
     }
   };
 
-  const handleFormComplete = (data: typeof formData) => {
-    setFormData(data);
-    setCurrentStep('verification');
+  const handleSkipToMain = () => {
+    localStorage.setItem("hasSeenOnboarding", "true");
+    bypassAuth();
+    toast({
+      title: "Development Mode",
+      description: "Authentication bypassed. You now have access to all features.",
+    });
+    navigate("/");
+  };
+
+  const handleFormComplete = () => {
+    // Skip verification and go straight to the main dashboard
+    localStorage.setItem("hasSeenOnboarding", "true");
+    bypassAuth();
+    toast({
+      title: "Account Created",
+      description: "You have been automatically signed in for development purposes.",
+    });
+    navigate("/");
   };
 
   return (
@@ -63,6 +78,14 @@ const Onboarding = () => {
                 {OnboardingSlides[currentSlide].action}
               </Button>
 
+              <Button
+                onClick={handleSkipToMain}
+                variant="outline"
+                className="w-full border-dashed border-yellow-400 text-yellow-600 hover:bg-yellow-50"
+              >
+                Development: Skip to Main Dashboard
+              </Button>
+
               <div className="flex justify-center gap-2">
                 {OnboardingSlides.map((_, index) => (
                   <div
@@ -80,21 +103,8 @@ const Onboarding = () => {
         {currentStep === 'form' && (
           <OnboardingForm 
             onBack={() => setCurrentStep('slides')} 
-            onComplete={(data) => handleFormComplete(data)} 
+            onComplete={handleFormComplete} 
           />
-        )}
-
-        {currentStep === 'verification' && (
-          <VerificationForm
-            email={formData.email}
-            phone={formData.phone}
-            onVerificationComplete={() => setCurrentStep('registration')}
-            onBack={() => setCurrentStep('form')}
-          />
-        )}
-
-        {currentStep === 'registration' && (
-          <RegistrationChat />
         )}
       </div>
     </div>

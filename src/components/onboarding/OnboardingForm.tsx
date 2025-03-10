@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -12,13 +13,7 @@ import { PasswordFields } from "./PasswordFields";
 
 interface OnboardingFormProps {
   onBack: () => void;
-  onComplete: (formData: {
-    firstName: string;
-    lastName: string;
-    email: string;
-    phone: string;
-    password: string;
-  }) => void;
+  onComplete: () => void;
 }
 
 export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
@@ -75,17 +70,11 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
     }
     
     toast({
-      title: "Verification required",
-      description: "Please check your phone and email for verification codes.",
+      title: "Account created",
+      description: "Proceeding to the dashboard.",
     });
     
-    onComplete({
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      email: formData.email,
-      phone: formData.phone,
-      password: formData.password,
-    });
+    onComplete();
   };
 
   const handleInputChange = (field: keyof typeof formData, value: string) => {
@@ -162,7 +151,7 @@ export const OnboardingForm = ({ onBack, onComplete }: OnboardingFormProps) => {
         </Button>
         <Button
           type="button"
-          variant="ghost"
+          variant="outline"
           onClick={onBack}
           className="w-full text-secondary hover:text-secondary-light hover:bg-secondary/10 transition-colors duration-200 text-sm tracking-wide"
         >
